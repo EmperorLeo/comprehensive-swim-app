@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B3A4D4DB1C22AEE90086DB36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D4DA1C22AEE90086DB36 /* AppDelegate.swift */; };
-		B3A4D4DD1C22AEE90086DB36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D4DC1C22AEE90086DB36 /* ViewController.swift */; };
 		B3A4D4E01C22AEE90086DB36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A4D4DE1C22AEE90086DB36 /* Main.storyboard */; };
 		B3A4D4E31C22AEE90086DB36 /* Swim_Friend_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D4E11C22AEE90086DB36 /* Swim_Friend_iOS.xcdatamodeld */; };
 		B3A4D4E51C22AEE90086DB36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A4D4E41C22AEE90086DB36 /* Assets.xcassets */; };
 		B3A4D4E81C22AEE90086DB36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A4D4E61C22AEE90086DB36 /* LaunchScreen.storyboard */; };
 		B3A4D4F31C22AEE90086DB36 /* Swim_Friend_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D4F21C22AEE90086DB36 /* Swim_Friend_iOSTests.swift */; };
 		B3A4D4FE1C22AEE90086DB36 /* Swim_Friend_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D4FD1C22AEE90086DB36 /* Swim_Friend_iOSUITests.swift */; };
+		B3A4D50C1C22B2360086DB36 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D50B1C22B2360086DB36 /* MainViewController.swift */; };
+		B3A4D50E1C22B24E0086DB36 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D50D1C22B24E0086DB36 /* LoginViewController.swift */; };
+		B3A4D5131C22C2320086DB36 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D5121C22C2320086DB36 /* Colors.swift */; };
+		B3A4D5181C233E4B0086DB36 /* swimclock.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A4D5171C233E4B0086DB36 /* swimclock.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		B3A4D4D71C22AEE90086DB36 /* Swim Friend iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swim Friend iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A4D4DA1C22AEE90086DB36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3A4D4DC1C22AEE90086DB36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3A4D4DF1C22AEE90086DB36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3A4D4E21C22AEE90086DB36 /* Swim_Friend_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Swim_Friend_iOS.xcdatamodel; sourceTree = "<group>"; };
 		B3A4D4E41C22AEE90086DB36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		B3A4D4F91C22AEE90086DB36 /* Swim Friend iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swim Friend iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A4D4FD1C22AEE90086DB36 /* Swim_Friend_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swim_Friend_iOSUITests.swift; sourceTree = "<group>"; };
 		B3A4D4FF1C22AEE90086DB36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3A4D50B1C22B2360086DB36 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B3A4D50D1C22B24E0086DB36 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B3A4D5121C22C2320086DB36 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B3A4D5171C233E4B0086DB36 /* swimclock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swimclock.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,12 @@
 		B3A4D4D91C22AEE90086DB36 /* Swim Friend iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B3A4D5141C22C8030086DB36 /* Icons */,
 				B3A4D4DA1C22AEE90086DB36 /* AppDelegate.swift */,
-				B3A4D4DC1C22AEE90086DB36 /* ViewController.swift */,
+				B3A4D50D1C22B24E0086DB36 /* LoginViewController.swift */,
 				B3A4D4DE1C22AEE90086DB36 /* Main.storyboard */,
+				B3A4D50B1C22B2360086DB36 /* MainViewController.swift */,
+				B3A4D5121C22C2320086DB36 /* Colors.swift */,
 				B3A4D4E41C22AEE90086DB36 /* Assets.xcassets */,
 				B3A4D4E61C22AEE90086DB36 /* LaunchScreen.storyboard */,
 				B3A4D4E91C22AEE90086DB36 /* Info.plist */,
@@ -126,6 +135,14 @@
 				B3A4D4FF1C22AEE90086DB36 /* Info.plist */,
 			);
 			path = "Swim Friend iOSUITests";
+			sourceTree = "<group>";
+		};
+		B3A4D5141C22C8030086DB36 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				B3A4D5171C233E4B0086DB36 /* swimclock.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A4D5181C233E4B0086DB36 /* swimclock.png in Resources */,
 				B3A4D4E81C22AEE90086DB36 /* LaunchScreen.storyboard in Resources */,
 				B3A4D4E51C22AEE90086DB36 /* Assets.xcassets in Resources */,
 				B3A4D4E01C22AEE90086DB36 /* Main.storyboard in Resources */,
@@ -259,9 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3A4D4DD1C22AEE90086DB36 /* ViewController.swift in Sources */,
 				B3A4D4DB1C22AEE90086DB36 /* AppDelegate.swift in Sources */,
+				B3A4D5131C22C2320086DB36 /* Colors.swift in Sources */,
 				B3A4D4E31C22AEE90086DB36 /* Swim_Friend_iOS.xcdatamodeld in Sources */,
+				B3A4D50E1C22B24E0086DB36 /* LoginViewController.swift in Sources */,
+				B3A4D50C1C22B2360086DB36 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +506,7 @@
 				B3A4D5041C22AEE90086DB36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3A4D5051C22AEE90086DB36 /* Build configuration list for PBXNativeTarget "Swim Friend iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +515,7 @@
 				B3A4D5071C22AEE90086DB36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3A4D5081C22AEE90086DB36 /* Build configuration list for PBXNativeTarget "Swim Friend iOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +524,7 @@
 				B3A4D50A1C22AEE90086DB36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
