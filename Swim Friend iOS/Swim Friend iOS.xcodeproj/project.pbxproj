@@ -18,6 +18,7 @@
 		B3A4D50E1C22B24E0086DB36 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D50D1C22B24E0086DB36 /* LoginViewController.swift */; };
 		B3A4D5131C22C2320086DB36 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D5121C22C2320086DB36 /* Colors.swift */; };
 		B3A4D5181C233E4B0086DB36 /* swimclock.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A4D5171C233E4B0086DB36 /* swimclock.png */; };
+		B3A4D51A1C234D2E0086DB36 /* UserDetailsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D5191C234D2E0086DB36 /* UserDetailsTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B3A4D50D1C22B24E0086DB36 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B3A4D5121C22C2320086DB36 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B3A4D5171C233E4B0086DB36 /* swimclock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swimclock.png; sourceTree = "<group>"; };
+		B3A4D5191C234D2E0086DB36 /* UserDetailsTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				B3A4D4DA1C22AEE90086DB36 /* AppDelegate.swift */,
 				B3A4D50D1C22B24E0086DB36 /* LoginViewController.swift */,
 				B3A4D4DE1C22AEE90086DB36 /* Main.storyboard */,
+				B3A4D5191C234D2E0086DB36 /* UserDetailsTabBarController.swift */,
 				B3A4D50B1C22B2360086DB36 /* MainViewController.swift */,
 				B3A4D5121C22C2320086DB36 /* Colors.swift */,
 				B3A4D4E41C22AEE90086DB36 /* Assets.xcassets */,
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A4D4DB1C22AEE90086DB36 /* AppDelegate.swift in Sources */,
+				B3A4D51A1C234D2E0086DB36 /* UserDetailsTabBarController.swift in Sources */,
 				B3A4D5131C22C2320086DB36 /* Colors.swift in Sources */,
 				B3A4D4E31C22AEE90086DB36 /* Swim_Friend_iOS.xcdatamodeld in Sources */,
 				B3A4D50E1C22B24E0086DB36 /* LoginViewController.swift in Sources */,

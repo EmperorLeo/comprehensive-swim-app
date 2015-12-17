@@ -256,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="3482" y="1227"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--User Details Tab Bar Controller-->
         <scene sceneID="nAf-AH-6Yk">
             <objects>
-                <tabBarController id="P6J-7N-yEn" sceneMemberID="viewController">
+                <tabBarController id="P6J-7N-yEn" customClass="UserDetailsTabBarController" customModule="Swim_Friend_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="qMH-ez-mOZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
