@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Swim Friend iOS
+
+  Created by Leo Feldman on 12/18/15.
+  Copyright © 2015 Leo and Ray. All rights reserved.
+*/
+"Email" = "";
+"Password" = "";
+"Login" = "";
+"Swim_Search_Meets" = "";
+"Timer_Search_Meets" = "";
+"Create_Meet" = "";
+"User_Details" = "";
+"Goals" = "";
+"Times" = "";
+"Meets" = "";
+"Sets" = "";
+"Event_Name" = "";
+"Event" = "";
+"Heat" = "";

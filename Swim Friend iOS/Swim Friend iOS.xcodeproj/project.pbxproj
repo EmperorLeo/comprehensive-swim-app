@@ -19,6 +19,11 @@
 		B3A4D5131C22C2320086DB36 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D5121C22C2320086DB36 /* Colors.swift */; };
 		B3A4D5181C233E4B0086DB36 /* swimclock.png in Resources */ = {isa = PBXBuildFile; fileRef = B3A4D5171C233E4B0086DB36 /* swimclock.png */; };
 		B3A4D51A1C234D2E0086DB36 /* UserDetailsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D5191C234D2E0086DB36 /* UserDetailsTabBarController.swift */; };
+		B3A4D5201C2352C80086DB36 /* MeetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D51F1C2352C80086DB36 /* MeetsTableViewController.swift */; };
+		B3A4D5221C235E640086DB36 /* SwimmerMeetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D5211C235E640086DB36 /* SwimmerMeetViewController.swift */; };
+		B3A4D5961C23B1930086DB36 /* DigitalClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D5951C23B1930086DB36 /* DigitalClock.swift */; };
+		B3A4D5991C23C7990086DB36 /* Let's go Digital Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3A4D5981C23C7990086DB36 /* Let's go Digital Regular.ttf */; };
+		B3A4D59F1C23D0B90086DB36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3A4D5A11C23D0B90086DB36 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,15 @@
 		B3A4D5121C22C2320086DB36 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B3A4D5171C233E4B0086DB36 /* swimclock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swimclock.png; sourceTree = "<group>"; };
 		B3A4D5191C234D2E0086DB36 /* UserDetailsTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsTabBarController.swift; sourceTree = "<group>"; };
+		B3A4D51F1C2352C80086DB36 /* MeetsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetsTableViewController.swift; sourceTree = "<group>"; };
+		B3A4D5211C235E640086DB36 /* SwimmerMeetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwimmerMeetViewController.swift; sourceTree = "<group>"; };
+		B3A4D5951C23B1930086DB36 /* DigitalClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalClock.swift; sourceTree = "<group>"; };
+		B3A4D5981C23C7990086DB36 /* Let's go Digital Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Let's go Digital Regular.ttf"; sourceTree = "<group>"; };
+		B3A4D5A01C23D0B90086DB36 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3A4D5A21C23D0BE0086DB36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3A4D5A61C23D5CE0086DB36 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		B3A4D5A71C23D5CE0086DB36 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B3A4D5A81C23D5CE0086DB36 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,13 +121,16 @@
 		B3A4D4D91C22AEE90086DB36 /* Swim Friend iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B3A4D5971C23C7830086DB36 /* Resources */,
+				B3A4D5941C23B16C0086DB36 /* CustomClasses */,
 				B3A4D5141C22C8030086DB36 /* Icons */,
 				B3A4D4DA1C22AEE90086DB36 /* AppDelegate.swift */,
 				B3A4D50D1C22B24E0086DB36 /* LoginViewController.swift */,
 				B3A4D4DE1C22AEE90086DB36 /* Main.storyboard */,
+				B3A4D5211C235E640086DB36 /* SwimmerMeetViewController.swift */,
 				B3A4D5191C234D2E0086DB36 /* UserDetailsTabBarController.swift */,
+				B3A4D51F1C2352C80086DB36 /* MeetsTableViewController.swift */,
 				B3A4D50B1C22B2360086DB36 /* MainViewController.swift */,
-				B3A4D5121C22C2320086DB36 /* Colors.swift */,
 				B3A4D4E41C22AEE90086DB36 /* Assets.xcassets */,
 				B3A4D4E61C22AEE90086DB36 /* LaunchScreen.storyboard */,
 				B3A4D4E91C22AEE90086DB36 /* Info.plist */,
@@ -146,6 +163,24 @@
 				B3A4D5171C233E4B0086DB36 /* swimclock.png */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		B3A4D5941C23B16C0086DB36 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				B3A4D5951C23B1930086DB36 /* DigitalClock.swift */,
+			);
+			name = CustomClasses;
+			sourceTree = "<group>";
+		};
+		B3A4D5971C23C7830086DB36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3A4D5A11C23D0B90086DB36 /* Localizable.strings */,
+				B3A4D5121C22C2320086DB36 /* Colors.swift */,
+				B3A4D5981C23C7990086DB36 /* Let's go Digital Regular.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +269,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = B3A4D4CE1C22AEE90086DB36;
 			productRefGroup = B3A4D4D81C22AEE90086DB36 /* Products */;
@@ -253,8 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A4D5181C233E4B0086DB36 /* swimclock.png in Resources */,
+				B3A4D59F1C23D0B90086DB36 /* Localizable.strings in Resources */,
 				B3A4D4E81C22AEE90086DB36 /* LaunchScreen.storyboard in Resources */,
 				B3A4D4E51C22AEE90086DB36 /* Assets.xcassets in Resources */,
+				B3A4D5991C23C7990086DB36 /* Let's go Digital Regular.ttf in Resources */,
 				B3A4D4E01C22AEE90086DB36 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +318,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A4D5221C235E640086DB36 /* SwimmerMeetViewController.swift in Sources */,
+				B3A4D5961C23B1930086DB36 /* DigitalClock.swift in Sources */,
 				B3A4D4DB1C22AEE90086DB36 /* AppDelegate.swift in Sources */,
+				B3A4D5201C2352C80086DB36 /* MeetsTableViewController.swift in Sources */,
 				B3A4D51A1C234D2E0086DB36 /* UserDetailsTabBarController.swift in Sources */,
 				B3A4D5131C22C2320086DB36 /* Colors.swift in Sources */,
 				B3A4D4E31C22AEE90086DB36 /* Swim_Friend_iOS.xcdatamodeld in Sources */,
@@ -325,6 +366,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B3A4D4DF1C22AEE90086DB36 /* Base */,
+				B3A4D5A61C23D5CE0086DB36 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -333,8 +375,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				B3A4D4E71C22AEE90086DB36 /* Base */,
+				B3A4D5A71C23D5CE0086DB36 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B3A4D5A11C23D0B90086DB36 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3A4D5A01C23D0B90086DB36 /* en */,
+				B3A4D5A21C23D0BE0086DB36 /* Base */,
+				B3A4D5A81C23D5CE0086DB36 /* ko */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,0 +1,69 @@
+
+/* Class = "UINavigationItem"; title = "Swim App"; ObjectID = "0Tx-7u-hLl"; */
+"0Tx-7u-hLl.title" = "Swim App";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1tF-g6-uEd"; */
+"1tF-g6-uEd.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Goals"; ObjectID = "3iR-YO-ixi"; */
+"3iR-YO-ixi.title" = "Goals";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "4Wv-cu-83U"; */
+"4Wv-cu-83U.placeholder" = "Email";
+
+/* Class = "UITabBarItem"; title = "Meets"; ObjectID = "BWa-6u-8jK"; */
+"BWa-6u-8jK.title" = "Meets";
+
+/* Class = "UILabel"; text = "Create Meet"; ObjectID = "CVb-b9-OwI"; */
+"CVb-b9-OwI.text" = "Create Meet";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Cpy-kY-KL8"; */
+"Cpy-kY-KL8.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Meets"; ObjectID = "F2X-sv-uOM"; */
+"F2X-sv-uOM.title" = "Meets";
+
+/* Class = "UILabel"; text = "Search Meets (as Swimmer)"; ObjectID = "IaX-yJ-IBd"; */
+"IaX-yJ-IBd.text" = "Search Meets (as Swimmer)";
+
+/* Class = "UIViewController"; title = "Swimmer Meet View Controller"; ObjectID = "LBR-m1-3Dx"; */
+"LBR-m1-3Dx.title" = "Swimmer Meet View Controller";
+
+/* Class = "UILabel"; text = "Event Name"; ObjectID = "MYG-VO-ynt"; */
+"MYG-VO-ynt.text" = "Event Name";
+
+/* Class = "UITabBarItem"; title = "Times"; ObjectID = "PuJ-bV-heL"; */
+"PuJ-bV-heL.title" = "Times";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Skb-lb-UaG"; */
+"Skb-lb-UaG.normalTitle" = "Login";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "gcX-Qe-4jv"; */
+"gcX-Qe-4jv.title" = "Title";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "iE0-Da-aKT"; */
+"iE0-Da-aKT.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Heat"; ObjectID = "kh8-yU-lMk"; */
+"kh8-yU-lMk.text" = "Heat";
+
+/* Class = "UILabel"; text = "User Details"; ObjectID = "mx1-AL-Dgu"; */
+"mx1-AL-Dgu.text" = "User Details";
+
+/* Class = "UINavigationItem"; title = "Goals"; ObjectID = "oMH-Of-cok"; */
+"oMH-Of-cok.title" = "Goals";
+
+/* Class = "UITabBarItem"; title = "Sets"; ObjectID = "ov8-cn-KNg"; */
+"ov8-cn-KNg.title" = "Sets";
+
+/* Class = "UILabel"; text = "Search Meets (as Timer)"; ObjectID = "r4B-LW-aL9"; */
+"r4B-LW-aL9.text" = "Search Meets (as Timer)";
+
+/* Class = "UIViewController"; title = "Times"; ObjectID = "reT-Jg-Ihe"; */
+"reT-Jg-Ihe.title" = "Times";
+
+/* Class = "UILabel"; text = "Event"; ObjectID = "ujJ-9T-acH"; */
+"ujJ-9T-acH.text" = "Event";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zf1-b3-cNZ"; */
+"zf1-b3-cNZ.text" = "Label";
