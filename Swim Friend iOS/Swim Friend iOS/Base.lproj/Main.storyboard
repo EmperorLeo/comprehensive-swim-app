@@ -18,55 +18,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Wv-cu-83U">
-                                <rect key="frame" x="252" y="189" width="97" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OwH-py-gOi">
+                                <rect key="frame" x="178" y="208" width="243" height="185"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Wv-cu-83U">
+                                        <rect key="frame" x="20" y="20" width="203" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iE0-Da-aKT">
+                                        <rect key="frame" x="20" y="71" width="203" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CgH-fs-Nog">
+                                        <rect key="frame" x="0.0" y="135" width="243" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skb-lb-UaG">
+                                                <rect key="frame" x="0.0" y="0.0" width="117" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="basicLoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oTf-ND-hna"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wev-c3-Ub2">
+                                                <rect key="frame" x="127" y="0.0" width="116" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Sign Up">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="signUpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sPV-lh-lkb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="cD3-Ve-wOG"/>
+                                    <constraint firstAttribute="height" constant="185" id="7CO-vB-j9m"/>
+                                    <constraint firstAttribute="width" constant="243" id="AmL-Iz-kJe"/>
+                                    <constraint firstItem="CgH-fs-Nog" firstAttribute="leading" secondItem="OwH-py-gOi" secondAttribute="leading" id="Kiu-FB-yg2"/>
+                                    <constraint firstAttribute="trailing" secondItem="CgH-fs-Nog" secondAttribute="trailing" id="Zq4-td-TzM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iE0-Da-aKT">
-                                <rect key="frame" x="252" y="241" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skb-lb-UaG">
-                                <rect key="frame" x="277" y="298" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="basicLoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oTf-ND-hna"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.34216314885773758" green="0.66475921438513663" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Skb-lb-UaG" firstAttribute="centerX" secondItem="iE0-Da-aKT" secondAttribute="centerX" id="A2s-9Q-X4H"/>
-                            <constraint firstItem="4Wv-cu-83U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HAH-Ty-G0C"/>
-                            <constraint firstItem="iE0-Da-aKT" firstAttribute="trailing" secondItem="4Wv-cu-83U" secondAttribute="trailing" id="Sv7-eP-He4"/>
-                            <constraint firstItem="4Wv-cu-83U" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="169" id="VCJ-C6-hJ8"/>
-                            <constraint firstItem="Skb-lb-UaG" firstAttribute="top" secondItem="iE0-Da-aKT" secondAttribute="bottom" constant="27" id="pnc-If-J8F"/>
-                            <constraint firstItem="iE0-Da-aKT" firstAttribute="leading" secondItem="4Wv-cu-83U" secondAttribute="leading" id="tNy-Ko-gfl"/>
-                            <constraint firstItem="iE0-Da-aKT" firstAttribute="top" secondItem="4Wv-cu-83U" secondAttribute="bottom" constant="22" id="tOV-JB-QKd"/>
+                            <constraint firstItem="OwH-py-gOi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7sP-1P-zyv"/>
+                            <constraint firstItem="OwH-py-gOi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UEc-PA-FuS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="basicLoginButton" destination="Skb-lb-UaG" id="otb-HA-ESt"/>
-                        <outlet property="emailField" destination="4Wv-cu-83U" id="9h3-jl-1fh"/>
+                        <outlet property="loginEmbeddedView" destination="OwH-py-gOi" id="zd2-0R-LmK"/>
                         <outlet property="passwordField" destination="iE0-Da-aKT" id="DD4-ej-AIi"/>
+                        <outlet property="signUpButton" destination="wev-c3-Ub2" id="Mdy-a5-GHu"/>
+                        <outlet property="usernameField" destination="4Wv-cu-83U" id="QDO-z3-ZJV"/>
                         <segue destination="eBD-5u-ciR" kind="show" identifier="LoginSegue" id="ief-sS-ClJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256" y="393"/>
+            <point key="canvasLocation" x="246" y="385"/>
         </scene>
         <!--Swim App-->
         <scene sceneID="4DD-1m-gaA">
