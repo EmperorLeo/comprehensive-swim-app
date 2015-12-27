@@ -22,5 +22,16 @@ class MainViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    }
+   
+    
+    @IBAction func logout(sender: UIBarButtonItem) {
+        
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "user_token")
+        NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "user_name")
+        self.performSegueWithIdentifier("logoutSegue", sender: sender)
+    }
+    
     
 }

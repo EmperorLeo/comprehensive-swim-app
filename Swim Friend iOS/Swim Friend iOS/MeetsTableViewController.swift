@@ -7,22 +7,35 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class MeetsTableViewController: UITableViewController {
 
     //Testing variables
-    var meetsArray = ["YMCA Invitational", "HULA Invitational" ,"USRY", "YSSC", "Regionals"]
+//    var meetsArray = ["YMCA Invitational", "HULA Invitational" ,"USRY", "YSSC", "Regionals"]
+    var meetsArray: [UserMeet] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationItem.title = "Meets"
-//        navigationItem.titleView?.backgroundColor = UIColor.whiteColor()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        Alamofire.request(.GET, URLBuilder().users().username().value(USER_NAME).token(USER_TOKEN).complete()).responseJSON {
+            response in
+            switch(response.result) {
+            case .Success(let data):
+                let json = JSON(data)
+                for (index,meetJSON):(String,JSON) in json["meets"] {
+                    let userMeet = UserMeet(meetId: meetJSON["_id"].stringValue, date: "", name: meetJSON["name"].stringValue, permission: meetJSON["permission"].intValue)
+                    self.meetsArray.append(userMeet)
+                }
+                self.tableView.reloadData()
+            case .Failure(let error):
+                let alert = UIAlertController(title: "Meet load failed", message: "The end date should not be earlier than the start date.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +57,8 @@ class MeetsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("meetIdentifier", forIndexPath: indexPath)
-        cell.textLabel!.text = meetsArray[indexPath.row]
+        cell.textLabel!.text = meetsArray[indexPath.row].name
+        cell.detailTextLabel!.text = getPermission(meetsArray[indexPath.row].permission)
         // Configure the cell...
 
         return cell
@@ -90,13 +104,23 @@ class MeetsTableViewController: UITableViewController {
     */
 
     
+    func getPermission(i: Int) -> String {
+        if(i == 0) {
+            return "Admin"
+        } else if(i == 1) {
+            return "Timer"
+        } else {
+            return "Swimmer"
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(sender is NSIndexPath) {
             let row = (sender as! NSIndexPath).row
-            let meetName = meetsArray[row]
+            let meetName = meetsArray[row].name
             segue.destinationViewController.navigationItem.title = meetName
         }
         

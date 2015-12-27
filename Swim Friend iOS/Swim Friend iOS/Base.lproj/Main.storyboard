@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vBw-ot-DoX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -53,7 +53,7 @@
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="signUpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sPV-lh-lkb"/>
+                                                    <action selector="signUpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iLR-59-tpZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -69,6 +69,11 @@
                                     <constraint firstAttribute="trailing" secondItem="CgH-fs-Nog" secondAttribute="trailing" id="Zq4-td-TzM"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Iit-ta-7jy">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <animations/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.34216314885773758" green="0.66475921438513663" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,20 +81,268 @@
                         <constraints>
                             <constraint firstItem="OwH-py-gOi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7sP-1P-zyv"/>
                             <constraint firstItem="OwH-py-gOi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UEc-PA-FuS"/>
+                            <constraint firstItem="Iit-ta-7jy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rLV-kZ-97v"/>
+                            <constraint firstItem="Iit-ta-7jy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rvV-se-O7K"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="v2C-nl-Hrm"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Iit-ta-7jy" id="Ih6-3f-Wtb"/>
                         <outlet property="basicLoginButton" destination="Skb-lb-UaG" id="otb-HA-ESt"/>
                         <outlet property="loginEmbeddedView" destination="OwH-py-gOi" id="zd2-0R-LmK"/>
                         <outlet property="passwordField" destination="iE0-Da-aKT" id="DD4-ej-AIi"/>
                         <outlet property="signUpButton" destination="wev-c3-Ub2" id="Mdy-a5-GHu"/>
                         <outlet property="usernameField" destination="4Wv-cu-83U" id="QDO-z3-ZJV"/>
                         <segue destination="eBD-5u-ciR" kind="show" identifier="LoginSegue" id="ief-sS-ClJ"/>
+                        <segue destination="o0g-D8-qO4" kind="show" identifier="signUpSegue" id="hhM-kW-TFd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="385"/>
+            <point key="canvasLocation" x="274" y="517"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ayu-Kn-fzk">
+            <objects>
+                <navigationController id="vBw-ot-DoX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wJ4-te-drN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Plh-PG-cQl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dui-td-eLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-418" y="517"/>
+        </scene>
+        <!--Swimmer Information-->
+        <scene sceneID="pnp-s8-LXg">
+            <objects>
+                <viewController storyboardIdentifier="MeetSwimmersPage" id="huC-1F-lwh" customClass="MeetSwimmersController" customModule="Swim_Friend_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sj5-kr-468"/>
+                        <viewControllerLayoutGuide type="bottom" id="j1w-v1-UaZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lRZ-u3-fKk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Implemented" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fem-UO-Qb8">
+                                <rect key="frame" x="233" y="290" width="133" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fem-UO-Qb8" firstAttribute="centerX" secondItem="lRZ-u3-fKk" secondAttribute="centerX" id="WtG-Dz-MpE"/>
+                            <constraint firstItem="Fem-UO-Qb8" firstAttribute="centerY" secondItem="lRZ-u3-fKk" secondAttribute="centerY" id="dz6-zD-90N"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Swimmer Information" id="CWH-hT-SWW">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="9gk-EH-LDG">
+                            <connections>
+                                <segue destination="eBD-5u-ciR" kind="show" id="QBn-Bx-Ppy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqo-v5-fdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="-292"/>
+        </scene>
+        <!--Event Information-->
+        <scene sceneID="MkP-nD-yVT">
+            <objects>
+                <viewController storyboardIdentifier="MeetEventsPage" id="Nzy-9c-l5p" customClass="MeetEventsController" customModule="Swim_Friend_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s7I-2V-77h"/>
+                        <viewControllerLayoutGuide type="bottom" id="sEe-bA-dFY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SiI-Ti-G9w">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Implemented" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGi-Ma-FyG">
+                                <rect key="frame" x="234" y="289" width="133" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fGi-Ma-FyG" firstAttribute="centerX" secondItem="SiI-Ti-G9w" secondAttribute="centerX" id="0VH-e3-4bj"/>
+                            <constraint firstItem="fGi-Ma-FyG" firstAttribute="centerY" secondItem="SiI-Ti-G9w" secondAttribute="centerY" id="xvF-ll-TO7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Event Information" id="RNM-wY-V6T">
+                        <barButtonItem key="rightBarButtonItem" title="Add Swimmers" id="ozu-IT-xDh">
+                            <connections>
+                                <segue destination="huC-1F-lwh" kind="show" id="Rfb-a5-EYD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9aM-Nu-x8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="-1189"/>
+        </scene>
+        <!--Meet Information-->
+        <scene sceneID="byG-lb-Np9">
+            <objects>
+                <viewController storyboardIdentifier="MeetMetadataPage" id="YH0-zG-iIH" customClass="MeetMetadataController" customModule="Swim_Friend_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xsy-F7-6Mj"/>
+                        <viewControllerLayoutGuide type="bottom" id="HUd-dV-7yb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D1K-8e-xfK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="URB-Hp-Gac">
+                                <rect key="frame" x="140" y="64" width="320" height="536"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pAH-66-0v5">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="536"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="kXq-0v-9v3">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meet Name" textAlignment="natural" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="NAi-dj-P5M">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hJZ-4V-nLQ">
+                                                        <rect key="frame" x="0.0" y="48" width="320" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="zC8-G8-Ir1">
+                                                        <rect key="frame" x="0.0" y="97" width="320" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Pm6-Ro-RCT">
+                                                        <rect key="frame" x="0.0" y="145" width="320" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meet Type" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="a7n-ue-MoG">
+                                                        <rect key="frame" x="0.0" y="193" width="320" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNI-fR-86y">
+                                                        <rect key="frame" x="0.0" y="242" width="320" height="30"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Date" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="UgJ-Jj-nMf">
+                                                                <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                                <animations/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="477-Ad-gMr">
+                                                                <rect key="frame" x="290" y="0.0" width="30" height="30"/>
+                                                                <animations/>
+                                                                <state key="normal" title="Set"/>
+                                                                <connections>
+                                                                    <action selector="startDateSetPressed:" destination="YH0-zG-iIH" eventType="touchUpInside" id="fIA-Pe-JJB"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <animations/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Act-zW-xTu">
+                                                        <rect key="frame" x="0.0" y="290" width="320" height="30"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Date" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="fWh-Cj-wtb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                                                                <animations/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFo-R7-OCJ">
+                                                                <rect key="frame" x="290" y="0.0" width="30" height="30"/>
+                                                                <animations/>
+                                                                <state key="normal" title="Set"/>
+                                                                <connections>
+                                                                    <action selector="endDateSetPressed:" destination="YH0-zG-iIH" eventType="touchUpInside" id="b0I-X1-pzi"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <animations/>
+                                                    </stackView>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="OVw-4i-HJ2">
+                                                <rect key="frame" x="0.0" y="320" width="320" height="216"/>
+                                                <animations/>
+                                                <date key="date" timeIntervalSinceReferenceDate="472660434.74985099">
+                                                    <!--2015-12-24 14:33:54 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="kXq-0v-9v3" secondAttribute="trailing" id="860-II-NHH"/>
+                                            <constraint firstItem="kXq-0v-9v3" firstAttribute="leading" secondItem="pAH-66-0v5" secondAttribute="leading" id="W3f-KI-YoI"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="URB-Hp-Gac" firstAttribute="top" secondItem="xsy-F7-6Mj" secondAttribute="bottom" id="FLT-ja-qWI"/>
+                            <constraint firstItem="URB-Hp-Gac" firstAttribute="centerX" secondItem="D1K-8e-xfK" secondAttribute="centerX" id="QMn-Wg-DAZ"/>
+                            <constraint firstItem="HUd-dV-7yb" firstAttribute="top" secondItem="URB-Hp-Gac" secondAttribute="bottom" id="qhL-MZ-r7a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Meet Information" id="SjC-yi-Y2f">
+                        <barButtonItem key="rightBarButtonItem" title="Add Events" id="mkK-3t-OuD">
+                            <connections>
+                                <segue destination="Nzy-9c-l5p" kind="show" identifier="SaveMeetInfo" id="Pkb-w1-nJF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="cityField" destination="Pm6-Ro-RCT" id="Oa7-qc-eoa"/>
+                        <outlet property="countryField" destination="hJZ-4V-nLQ" id="mlA-AZ-2du"/>
+                        <outlet property="datePicker" destination="OVw-4i-HJ2" id="2RM-7q-TCL"/>
+                        <outlet property="endDateField" destination="fWh-Cj-wtb" id="7O6-C6-jCt"/>
+                        <outlet property="endDateSet" destination="nFo-R7-OCJ" id="Qbx-Jf-kOo"/>
+                        <outlet property="largeMiddleStack" destination="URB-Hp-Gac" id="hgw-sf-Afa"/>
+                        <outlet property="meetNameField" destination="NAi-dj-P5M" id="Y6J-WN-RKh"/>
+                        <outlet property="meetTypeField" destination="a7n-ue-MoG" id="vEm-24-pzc"/>
+                        <outlet property="startDateField" destination="UgJ-Jj-nMf" id="VIv-Zn-RPg"/>
+                        <outlet property="startDateSet" destination="477-Ad-gMr" id="A6P-RM-a1k"/>
+                        <outlet property="stateField" destination="zC8-G8-Ir1" id="i1E-n7-AyR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXq-d8-fMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="-380"/>
         </scene>
         <!--Swim App-->
         <scene sceneID="4DD-1m-gaA">
@@ -142,6 +395,9 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="fAo-ak-Sr3" kind="show" id="h7D-Uf-nRV"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="CVb-b9-OwI" style="IBUITableViewCellStyleDefault" id="1Qf-RI-TNI">
                                         <rect key="frame" x="0.0" y="152" width="600" height="44"/>
@@ -162,6 +418,9 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="YH0-zG-iIH" kind="show" id="S6A-Xg-cd6"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="mx1-AL-Dgu" style="IBUITableViewCellStyleDefault" id="Be5-Rg-TgP">
                                         <rect key="frame" x="0.0" y="196" width="600" height="44"/>
@@ -194,11 +453,130 @@
                             <outlet property="delegate" destination="EnX-sP-QaA" id="avR-PH-Khd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Swim App" id="0Tx-7u-hLl"/>
+                    <navigationItem key="navigationItem" title="Swim App" id="0Tx-7u-hLl">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="9aA-Ez-FZ5">
+                            <connections>
+                                <action selector="logout:" destination="EnX-sP-QaA" id="QWK-hu-M65"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <segue destination="vBw-ot-DoX" kind="show" identifier="logoutSegue" id="T4U-dJ-zQs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uN-GQ-1LS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790" y="365"/>
+            <point key="canvasLocation" x="1768" y="275"/>
+        </scene>
+        <!--Search Meets-->
+        <scene sceneID="z6P-sa-GHK">
+            <objects>
+                <viewController id="fAo-ak-Sr3" customClass="SwimmerSearchMeetsController" customModule="Swim_Friend_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dyx-em-AbB"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Dc-LJ-gjU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hDl-BI-pZX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pmx-zl-CTp">
+                                <rect key="frame" x="0.0" y="64" width="600" height="132"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dn6-ad-QgL">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="132"/>
+                                        <subviews>
+                                            <searchBar contentMode="redraw" placeholder="Country" translatesAutoresizingMaskIntoConstraints="NO" id="Iug-PN-w92">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                                <animations/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                            <searchBar contentMode="redraw" placeholder="City" translatesAutoresizingMaskIntoConstraints="NO" id="zOV-yb-33y">
+                                                <rect key="frame" x="0.0" y="44" width="300" height="44"/>
+                                                <animations/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                            <searchBar contentMode="redraw" placeholder="Name" translatesAutoresizingMaskIntoConstraints="NO" id="XNs-PC-Vq6">
+                                                <rect key="frame" x="0.0" y="88" width="300" height="44"/>
+                                                <animations/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYU-bR-oll">
+                                        <rect key="frame" x="300" y="0.0" width="300" height="132"/>
+                                        <animations/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="fAo-ak-Sr3" eventType="touchUpInside" id="NOa-Lz-aXH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yCI-z1-Oei">
+                                <rect key="frame" x="0.0" y="196" width="600" height="404"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchMeetCell" textLabel="udy-iy-v3W" detailTextLabel="Qu8-jY-tF6" style="IBUITableViewCellStyleSubtitle" id="0pF-Re-dS2">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0pF-Re-dS2" id="ABG-wn-G6n">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="udy-iy-v3W">
+                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qu8-jY-tF6">
+                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yCI-z1-Oei" firstAttribute="top" secondItem="pmx-zl-CTp" secondAttribute="bottom" id="Iaz-5I-Fy6"/>
+                            <constraint firstAttribute="trailing" secondItem="pmx-zl-CTp" secondAttribute="trailing" id="VCm-64-qiQ"/>
+                            <constraint firstItem="3Dc-LJ-gjU" firstAttribute="top" secondItem="yCI-z1-Oei" secondAttribute="bottom" id="YS9-34-luT"/>
+                            <constraint firstItem="yCI-z1-Oei" firstAttribute="leading" secondItem="hDl-BI-pZX" secondAttribute="leading" id="c0I-nj-TaE"/>
+                            <constraint firstAttribute="trailing" secondItem="yCI-z1-Oei" secondAttribute="trailing" id="neR-yc-qPG"/>
+                            <constraint firstItem="pmx-zl-CTp" firstAttribute="top" secondItem="dyx-em-AbB" secondAttribute="bottom" id="qJV-rz-5Ok"/>
+                            <constraint firstItem="pmx-zl-CTp" firstAttribute="leading" secondItem="hDl-BI-pZX" secondAttribute="leading" id="vq5-Va-RiI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search Meets" id="a3e-en-JgH"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="citySearch" destination="zOV-yb-33y" id="dKl-dz-fZ9"/>
+                        <outlet property="countrySearch" destination="Iug-PN-w92" id="iM7-lo-8K9"/>
+                        <outlet property="meetTableView" destination="yCI-z1-Oei" id="5sh-ka-tIy"/>
+                        <outlet property="nameSearch" destination="XNs-PC-Vq6" id="f27-ry-Nkz"/>
+                        <outlet property="searchButton" destination="eYU-bR-oll" id="On7-xm-Rm3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jRU-eh-zoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2546" y="312"/>
         </scene>
         <!--Times-->
         <scene sceneID="miW-1Q-1p2">
@@ -480,12 +858,30 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="meetIdentifier" id="dgo-TX-glr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="meetIdentifier" textLabel="Msv-zy-Tcz" detailTextLabel="qYT-dH-Tez" style="IBUITableViewCellStyleSubtitle" id="dgo-TX-glr">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dgo-TX-glr" id="mvw-cH-Rcg">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Msv-zy-Tcz">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qYT-dH-Tez">
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -544,9 +940,126 @@
             </objects>
             <point key="canvasLocation" x="1028" y="385"/>
         </scene>
+        <!--Sign Up Controller-->
+        <scene sceneID="8nV-7u-xa3">
+            <objects>
+                <viewController id="o0g-D8-qO4" customClass="SignUpController" customModule="Swim_Friend_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="08e-na-033"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cwf-Lb-GsZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3uJ-0i-yL6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8n1-D5-Dl5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HQA-Bk-JdK">
+                                        <rect key="frame" x="231" y="135" width="139" height="330"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDM-nF-Lic">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yYS-vm-aPo">
+                                                <rect key="frame" x="0.0" y="50" width="139" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IT3-CU-aJO">
+                                                <rect key="frame" x="0.0" y="100" width="139" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Um8-e5-Ghy">
+                                                <rect key="frame" x="0.0" y="150" width="139" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Confirm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bU-HN-wY9">
+                                                <rect key="frame" x="0.0" y="200" width="139" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63n-i0-g6T">
+                                                <rect key="frame" x="0.0" y="250" width="139" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G9X-v5-3Vh">
+                                                <rect key="frame" x="0.0" y="300" width="139" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="HQA-Bk-JdK" firstAttribute="centerX" secondItem="8n1-D5-Dl5" secondAttribute="centerX" id="I94-jW-iOU"/>
+                                    <constraint firstAttribute="bottom" secondItem="HQA-Bk-JdK" secondAttribute="bottom" constant="135" id="jgj-jj-7iw"/>
+                                    <constraint firstItem="HQA-Bk-JdK" firstAttribute="top" secondItem="8n1-D5-Dl5" secondAttribute="top" constant="135" id="ys2-m7-ZNp"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8n1-D5-Dl5" secondAttribute="trailing" id="7Il-Wi-Gmp"/>
+                            <constraint firstItem="Cwf-Lb-GsZ" firstAttribute="top" secondItem="8n1-D5-Dl5" secondAttribute="bottom" id="LjN-Fa-M0a"/>
+                            <constraint firstItem="8n1-D5-Dl5" firstAttribute="leading" secondItem="3uJ-0i-yL6" secondAttribute="leading" id="Pqm-d9-ZJH"/>
+                            <constraint firstItem="8n1-D5-Dl5" firstAttribute="top" secondItem="3uJ-0i-yL6" secondAttribute="top" id="R42-X7-ajh"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="OFj-62-mDk"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="bEg-8k-YA7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Mos-en-Scc">
+                            <connections>
+                                <segue destination="vBw-ot-DoX" kind="show" identifier="backToLoginSegue" id="pTi-Ec-tvL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Sign Up" id="8zt-q3-Zhl">
+                            <connections>
+                                <action selector="signUpPressed:" destination="o0g-D8-qO4" id="Fih-RV-L5Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="birthdayField" destination="G9X-v5-3Vh" id="FvH-Ag-WX0"/>
+                        <outlet property="emailField" destination="63n-i0-g6T" id="Crt-Ix-iTe"/>
+                        <outlet property="firstNameField" destination="iDM-nF-Lic" id="Lbw-we-bRZ"/>
+                        <outlet property="lastNameField" destination="yYS-vm-aPo" id="8lb-qL-jUI"/>
+                        <outlet property="passwordConfirmField" destination="9bU-HN-wY9" id="FGe-af-cns"/>
+                        <outlet property="passwordField" destination="Um8-e5-Ghy" id="ZYz-Wk-a4a"/>
+                        <outlet property="scrollView" destination="8n1-D5-Dl5" id="dYF-ad-YUR"/>
+                        <outlet property="usernameField" destination="IT3-CU-aJO" id="iCR-4Y-K9k"/>
+                        <segue destination="eBD-5u-ciR" kind="show" identifier="postUserSegue" id="8HV-kY-WPc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9N2-T4-pyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794" y="1336"/>
+        </scene>
     </scenes>
     <resources>
         <image name="swimclock.png" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8HV-kY-WPc"/>
+        <segue reference="pTi-Ec-tvL"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.34216314889999999" green="0.66475921439999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		912F8B7A2DC8287A1551F9D3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B102CF18CF305141994B8A26 /* Pods.framework */; };
+		B33E3E1A1C2DDA06006E27D7 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33E3E191C2DDA06006E27D7 /* SignUpController.swift */; };
 		B377D2641C2BE78800C16344 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377D2631C2BE78800C16344 /* URLBuilder.swift */; };
 		B377D2661C2BEB9600C16344 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377D2651C2BEB9600C16344 /* User.swift */; };
 		B377D2681C2BF04800C16344 /* Meet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377D2671C2BF04800C16344 /* Meet.swift */; };
@@ -28,6 +29,11 @@
 		B3A4D5961C23B1930086DB36 /* DigitalClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D5951C23B1930086DB36 /* DigitalClock.swift */; };
 		B3A4D5991C23C7990086DB36 /* Let's go Digital Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3A4D5981C23C7990086DB36 /* Let's go Digital Regular.ttf */; };
 		B3A4D59F1C23D0B90086DB36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3A4D5A11C23D0B90086DB36 /* Localizable.strings */; };
+		B3EF665F1C2C3F1800A4CD32 /* MeetMetadataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF665E1C2C3F1800A4CD32 /* MeetMetadataController.swift */; };
+		B3EF66611C2C55C000A4CD32 /* MeetEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF66601C2C55C000A4CD32 /* MeetEventsController.swift */; };
+		B3EF66631C2C55D400A4CD32 /* MeetSwimmersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF66621C2C55D400A4CD32 /* MeetSwimmersController.swift */; };
+		B3EF66651C2CEE3E00A4CD32 /* SwimmerSearchMeetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF66641C2CEE3E00A4CD32 /* SwimmerSearchMeetsController.swift */; };
+		B3EF66671C2CF71B00A4CD32 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EF66661C2CF71B00A4CD32 /* UserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,7 @@
 /* Begin PBXFileReference section */
 		6316FBD1F66F597E253DC45F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B102CF18CF305141994B8A26 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33E3E191C2DDA06006E27D7 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		B377D2631C2BE78800C16344 /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		B377D2651C2BEB9600C16344 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B377D2671C2BF04800C16344 /* Meet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meet.swift; sourceTree = "<group>"; };
@@ -80,6 +87,11 @@
 		B3A4D5A61C23D5CE0086DB36 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		B3A4D5A71C23D5CE0086DB36 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B3A4D5A81C23D5CE0086DB36 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3EF665E1C2C3F1800A4CD32 /* MeetMetadataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetMetadataController.swift; sourceTree = "<group>"; };
+		B3EF66601C2C55C000A4CD32 /* MeetEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetEventsController.swift; sourceTree = "<group>"; };
+		B3EF66621C2C55D400A4CD32 /* MeetSwimmersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetSwimmersController.swift; sourceTree = "<group>"; };
+		B3EF66641C2CEE3E00A4CD32 /* SwimmerSearchMeetsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwimmerSearchMeetsController.swift; sourceTree = "<group>"; };
+		B3EF66661C2CF71B00A4CD32 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		EB451D42045AD7E1EEE34524 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +152,9 @@
 				B3A4D4DA1C22AEE90086DB36 /* AppDelegate.swift */,
 				B3A4D50D1C22B24E0086DB36 /* LoginViewController.swift */,
 				B3A4D4DE1C22AEE90086DB36 /* Main.storyboard */,
+				B33E3E191C2DDA06006E27D7 /* SignUpController.swift */,
+				B3EF66601C2C55C000A4CD32 /* MeetEventsController.swift */,
+				B3EF66621C2C55D400A4CD32 /* MeetSwimmersController.swift */,
 				B3A4D5211C235E640086DB36 /* SwimmerMeetViewController.swift */,
 				B3A4D5191C234D2E0086DB36 /* UserDetailsTabBarController.swift */,
 				B3A4D51F1C2352C80086DB36 /* MeetsTableViewController.swift */,
@@ -148,6 +163,8 @@
 				B3A4D4E61C22AEE90086DB36 /* LaunchScreen.storyboard */,
 				B3A4D4E91C22AEE90086DB36 /* Info.plist */,
 				B3A4D4E11C22AEE90086DB36 /* Swim_Friend_iOS.xcdatamodeld */,
+				B3EF665E1C2C3F1800A4CD32 /* MeetMetadataController.swift */,
+				B3EF66641C2CEE3E00A4CD32 /* SwimmerSearchMeetsController.swift */,
 			);
 			path = "Swim Friend iOS";
 			sourceTree = "<group>";
@@ -195,6 +212,7 @@
 				B377D2631C2BE78800C16344 /* URLBuilder.swift */,
 				B377D2651C2BEB9600C16344 /* User.swift */,
 				B377D2671C2BF04800C16344 /* Meet.swift */,
+				B3EF66661C2CF71B00A4CD32 /* UserInfo.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -402,18 +420,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3EF66611C2C55C000A4CD32 /* MeetEventsController.swift in Sources */,
 				B377D2681C2BF04800C16344 /* Meet.swift in Sources */,
 				B3A4D5221C235E640086DB36 /* SwimmerMeetViewController.swift in Sources */,
 				B3A4D5961C23B1930086DB36 /* DigitalClock.swift in Sources */,
+				B3EF66651C2CEE3E00A4CD32 /* SwimmerSearchMeetsController.swift in Sources */,
 				B3A4D4DB1C22AEE90086DB36 /* AppDelegate.swift in Sources */,
 				B3A4D5201C2352C80086DB36 /* MeetsTableViewController.swift in Sources */,
 				B3A4D51A1C234D2E0086DB36 /* UserDetailsTabBarController.swift in Sources */,
 				B377D2641C2BE78800C16344 /* URLBuilder.swift in Sources */,
 				B3A4D5131C22C2320086DB36 /* Colors.swift in Sources */,
 				B3A4D4E31C22AEE90086DB36 /* Swim_Friend_iOS.xcdatamodeld in Sources */,
+				B33E3E1A1C2DDA06006E27D7 /* SignUpController.swift in Sources */,
 				B3A4D50E1C22B24E0086DB36 /* LoginViewController.swift in Sources */,
 				B3A4D50C1C22B2360086DB36 /* MainViewController.swift in Sources */,
+				B3EF66631C2C55D400A4CD32 /* MeetSwimmersController.swift in Sources */,
 				B377D2661C2BEB9600C16344 /* User.swift in Sources */,
+				B3EF66671C2CF71B00A4CD32 /* UserInfo.swift in Sources */,
+				B3EF665F1C2C3F1800A4CD32 /* MeetMetadataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

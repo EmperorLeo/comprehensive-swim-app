@@ -84,34 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods/AWSAutoScaling.framework"
-  install_framework "Pods/AWSCloudWatch.framework"
-  install_framework "Pods/AWSCore.framework"
-  install_framework "Pods/AWSDynamoDB.framework"
-  install_framework "Pods/AWSEC2.framework"
-  install_framework "Pods/AWSElasticLoadBalancing.framework"
-  install_framework "Pods/AWSKinesis.framework"
-  install_framework "Pods/AWSMobileAnalytics.framework"
-  install_framework "Pods/AWSS3.framework"
-  install_framework "Pods/AWSSES.framework"
-  install_framework "Pods/AWSSNS.framework"
-  install_framework "Pods/AWSSQS.framework"
-  install_framework "Pods/AWSSimpleDB.framework"
   install_framework "Pods/Alamofire.framework"
+  install_framework "Pods/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods/AWSAutoScaling.framework"
-  install_framework "Pods/AWSCloudWatch.framework"
-  install_framework "Pods/AWSCore.framework"
-  install_framework "Pods/AWSDynamoDB.framework"
-  install_framework "Pods/AWSEC2.framework"
-  install_framework "Pods/AWSElasticLoadBalancing.framework"
-  install_framework "Pods/AWSKinesis.framework"
-  install_framework "Pods/AWSMobileAnalytics.framework"
-  install_framework "Pods/AWSS3.framework"
-  install_framework "Pods/AWSSES.framework"
-  install_framework "Pods/AWSSNS.framework"
-  install_framework "Pods/AWSSQS.framework"
-  install_framework "Pods/AWSSimpleDB.framework"
   install_framework "Pods/Alamofire.framework"
+  install_framework "Pods/SwiftyJSON.framework"
 fi

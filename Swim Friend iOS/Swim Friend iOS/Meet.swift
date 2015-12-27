@@ -23,21 +23,11 @@ class Meet {
     var currentEvent = 1;
     var currentHeat = 1;
     
-    init(meetId: String, name: String, country: String, state: String, city: String, admin: String, meetType: String, live: Bool) {
+    init(meetId: String, name: String, country: String, state: String?, city: String, admin: String, meetType: String, live: Bool) {
         self.meetId = meetId
         self.name = name
         self.country = country
         self.state = state
-        self.city = city
-        self.admin = admin
-        self.meetType = meetType
-        self.live = live
-    }
-    
-    init(meetId: String, name: String, country: String, city: String, admin: String, meetType: String, live: Bool) {
-        self.meetId = meetId
-        self.name = name
-        self.country = country
         self.city = city
         self.admin = admin
         self.meetType = meetType

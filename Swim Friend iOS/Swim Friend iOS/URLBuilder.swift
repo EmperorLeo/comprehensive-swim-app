@@ -10,7 +10,7 @@ import Foundation
 
 class URLBuilder {
     
-    var url = "http://" + "localhost:3000"
+    var url = "http://" + "ec2-52-23-154-47.compute-1.amazonaws.com:3000"
     
     func base() -> String {
         return localhost()
