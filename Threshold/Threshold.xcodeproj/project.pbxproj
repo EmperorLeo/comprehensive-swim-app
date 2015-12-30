@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B369CF181C33A6A100CFB07D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF171C33A6A100CFB07D /* AppDelegate.swift */; };
-		B369CF1A1C33A6A100CFB07D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF191C33A6A100CFB07D /* ViewController.swift */; };
 		B369CF1D1C33A6A100CFB07D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B369CF1B1C33A6A100CFB07D /* Main.storyboard */; };
 		B369CF201C33A6A100CFB07D /* Threshold.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B369CF1E1C33A6A100CFB07D /* Threshold.xcdatamodeld */; };
 		B369CF221C33A6A100CFB07D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B369CF211C33A6A100CFB07D /* Assets.xcassets */; };
 		B369CF251C33A6A100CFB07D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B369CF231C33A6A100CFB07D /* LaunchScreen.storyboard */; };
 		B369CF301C33A6A100CFB07D /* ThresholdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF2F1C33A6A100CFB07D /* ThresholdTests.swift */; };
 		B369CF3B1C33A6A100CFB07D /* ThresholdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF3A1C33A6A100CFB07D /* ThresholdUITests.swift */; };
+		B369CF4A1C33D0C700CFB07D /* ManageTimesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF491C33D0C700CFB07D /* ManageTimesController.swift */; };
+		B369CF4C1C33D0E500CFB07D /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF4B1C33D0E500CFB07D /* AddEventController.swift */; };
+		B369CF4E1C33D0F600CFB07D /* AddTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF4D1C33D0F600CFB07D /* AddTimeController.swift */; };
+		B369CF511C33D39B00CFB07D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF501C33D39B00CFB07D /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		B369CF141C33A6A100CFB07D /* Threshold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threshold.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B369CF171C33A6A100CFB07D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B369CF191C33A6A100CFB07D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B369CF1C1C33A6A100CFB07D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B369CF1F1C33A6A100CFB07D /* Threshold.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Threshold.xcdatamodel; sourceTree = "<group>"; };
 		B369CF211C33A6A100CFB07D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		B369CF361C33A6A100CFB07D /* ThresholdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThresholdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B369CF3A1C33A6A100CFB07D /* ThresholdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdUITests.swift; sourceTree = "<group>"; };
 		B369CF3C1C33A6A100CFB07D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B369CF491C33D0C700CFB07D /* ManageTimesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageTimesController.swift; sourceTree = "<group>"; };
+		B369CF4B1C33D0E500CFB07D /* AddEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
+		B369CF4D1C33D0F600CFB07D /* AddTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTimeController.swift; sourceTree = "<group>"; };
+		B369CF501C33D39B00CFB07D /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,14 @@
 		B369CF161C33A6A100CFB07D /* Threshold */ = {
 			isa = PBXGroup;
 			children = (
+				B369CF481C33D09700CFB07D /* ViewControllers */,
 				B369CF171C33A6A100CFB07D /* AppDelegate.swift */,
-				B369CF191C33A6A100CFB07D /* ViewController.swift */,
 				B369CF1B1C33A6A100CFB07D /* Main.storyboard */,
 				B369CF211C33A6A100CFB07D /* Assets.xcassets */,
 				B369CF231C33A6A100CFB07D /* LaunchScreen.storyboard */,
 				B369CF261C33A6A100CFB07D /* Info.plist */,
 				B369CF1E1C33A6A100CFB07D /* Threshold.xcdatamodeld */,
+				B369CF501C33D39B00CFB07D /* Models.swift */,
 			);
 			path = Threshold;
 			sourceTree = "<group>";
@@ -126,6 +133,16 @@
 				B369CF3C1C33A6A100CFB07D /* Info.plist */,
 			);
 			path = ThresholdUITests;
+			sourceTree = "<group>";
+		};
+		B369CF481C33D09700CFB07D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B369CF491C33D0C700CFB07D /* ManageTimesController.swift */,
+				B369CF4B1C33D0E500CFB07D /* AddEventController.swift */,
+				B369CF4D1C33D0F600CFB07D /* AddTimeController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +277,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B369CF201C33A6A100CFB07D /* Threshold.xcdatamodeld in Sources */,
-				B369CF1A1C33A6A100CFB07D /* ViewController.swift in Sources */,
+				B369CF4A1C33D0C700CFB07D /* ManageTimesController.swift in Sources */,
+				B369CF4C1C33D0E500CFB07D /* AddEventController.swift in Sources */,
+				B369CF511C33D39B00CFB07D /* Models.swift in Sources */,
 				B369CF181C33A6A100CFB07D /* AppDelegate.swift in Sources */,
+				B369CF4E1C33D0F600CFB07D /* AddTimeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
