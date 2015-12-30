@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77A82D12BDC0B1101D5CE527 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA873F560FF8A5D5EC29A73 /* Pods.framework */; };
+		B302E70E1C2FC68F00DB94A5 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B302E70D1C2FC68F00DB94A5 /* MainWindowController.swift */; };
+		B38F05C11C2FD22D00CC4D1E /* SideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38F05C01C2FD22D00CC4D1E /* SideTableViewController.swift */; };
 		B3A4D4621C22ADF20086DB36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D4611C22ADF20086DB36 /* AppDelegate.swift */; };
 		B3A4D4641C22ADF20086DB36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D4631C22ADF20086DB36 /* ViewController.swift */; };
 		B3A4D4671C22ADF20086DB36 /* Swim_Friend_OSX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3A4D4651C22ADF20086DB36 /* Swim_Friend_OSX.xcdatamodeld */; };
@@ -34,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00197A2D45CA2D0CF8BB8468 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6BA873F560FF8A5D5EC29A73 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9348101D6B95943CD1E570B5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B302E70D1C2FC68F00DB94A5 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		B38F05C01C2FD22D00CC4D1E /* SideTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideTableViewController.swift; sourceTree = "<group>"; };
 		B3A4D45E1C22ADF20086DB36 /* Swim Friend OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swim Friend OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A4D4611C22ADF20086DB36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3A4D4631C22ADF20086DB36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A82D12BDC0B1101D5CE527 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A4332EAD6DF8CA12CB31793 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9348101D6B95943CD1E570B5 /* Pods.debug.xcconfig */,
+				00197A2D45CA2D0CF8BB8468 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		210154179A156A0534C6E2AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BA873F560FF8A5D5EC29A73 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B3A4D4551C22ADF20086DB36 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +107,8 @@
 				B3A4D4751C22ADF20086DB36 /* Swim Friend OSXTests */,
 				B3A4D4801C22ADF20086DB36 /* Swim Friend OSXUITests */,
 				B3A4D45F1C22ADF20086DB36 /* Products */,
+				0A4332EAD6DF8CA12CB31793 /* Pods */,
+				210154179A156A0534C6E2AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +129,8 @@
 				B3A4D4631C22ADF20086DB36 /* ViewController.swift */,
 				B3A4D4681C22ADF20086DB36 /* Assets.xcassets */,
 				B3A4D46A1C22ADF20086DB36 /* Main.storyboard */,
+				B302E70D1C2FC68F00DB94A5 /* MainWindowController.swift */,
+				B38F05C01C2FD22D00CC4D1E /* SideTableViewController.swift */,
 				B3A4D46D1C22ADF20086DB36 /* Info.plist */,
 				B3A4D4651C22ADF20086DB36 /* Swim_Friend_OSX.xcdatamodeld */,
 			);
@@ -132,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3A4D4861C22ADF20086DB36 /* Build configuration list for PBXNativeTarget "Swim Friend OSX" */;
 			buildPhases = (
+				7DC3D68733CCC35B7A9D0D0A /* Check Pods Manifest.lock */,
 				B3A4D45A1C22ADF20086DB36 /* Sources */,
 				B3A4D45B1C22ADF20086DB36 /* Frameworks */,
 				B3A4D45C1C22ADF20086DB36 /* Resources */,
+				9DFBF5E7F69F7ED3ADCE7557 /* Embed Pods Frameworks */,
+				08C53728C5E6B0C582E9A146 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +283,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08C53728C5E6B0C582E9A146 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DC3D68733CCC35B7A9D0D0A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9DFBF5E7F69F7ED3ADCE7557 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B3A4D45A1C22ADF20086DB36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -257,6 +338,8 @@
 			files = (
 				B3A4D4641C22ADF20086DB36 /* ViewController.swift in Sources */,
 				B3A4D4621C22ADF20086DB36 /* AppDelegate.swift in Sources */,
+				B38F05C11C2FD22D00CC4D1E /* SideTableViewController.swift in Sources */,
+				B302E70E1C2FC68F00DB94A5 /* MainWindowController.swift in Sources */,
 				B3A4D4671C22ADF20086DB36 /* Swim_Friend_OSX.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +469,7 @@
 		};
 		B3A4D4871C22ADF20086DB36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9348101D6B95943CD1E570B5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -398,6 +482,7 @@
 		};
 		B3A4D4881C22ADF20086DB36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00197A2D45CA2D0CF8BB8468 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -479,6 +564,7 @@
 				B3A4D4881C22ADF20086DB36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3A4D4891C22ADF20086DB36 /* Build configuration list for PBXNativeTarget "Swim Friend OSXTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +573,7 @@
 				B3A4D48B1C22ADF20086DB36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3A4D48C1C22ADF20086DB36 /* Build configuration list for PBXNativeTarget "Swim Friend OSXUITests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +582,7 @@
 				B3A4D48E1C22ADF20086DB36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

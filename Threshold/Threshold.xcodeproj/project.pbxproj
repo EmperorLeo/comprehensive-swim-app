@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B369CF181C33A6A100CFB07D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF171C33A6A100CFB07D /* AppDelegate.swift */; };
+		B369CF1A1C33A6A100CFB07D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF191C33A6A100CFB07D /* ViewController.swift */; };
+		B369CF1D1C33A6A100CFB07D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B369CF1B1C33A6A100CFB07D /* Main.storyboard */; };
+		B369CF201C33A6A100CFB07D /* Threshold.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B369CF1E1C33A6A100CFB07D /* Threshold.xcdatamodeld */; };
+		B369CF221C33A6A100CFB07D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B369CF211C33A6A100CFB07D /* Assets.xcassets */; };
+		B369CF251C33A6A100CFB07D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B369CF231C33A6A100CFB07D /* LaunchScreen.storyboard */; };
+		B369CF301C33A6A100CFB07D /* ThresholdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF2F1C33A6A100CFB07D /* ThresholdTests.swift */; };
+		B369CF3B1C33A6A100CFB07D /* ThresholdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF3A1C33A6A100CFB07D /* ThresholdUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B369CF2C1C33A6A100CFB07D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B369CF0C1C33A6A100CFB07D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B369CF131C33A6A100CFB07D;
+			remoteInfo = Threshold;
+		};
+		B369CF371C33A6A100CFB07D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B369CF0C1C33A6A100CFB07D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B369CF131C33A6A100CFB07D;
+			remoteInfo = Threshold;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B369CF141C33A6A100CFB07D /* Threshold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threshold.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B369CF171C33A6A100CFB07D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B369CF191C33A6A100CFB07D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B369CF1C1C33A6A100CFB07D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B369CF1F1C33A6A100CFB07D /* Threshold.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Threshold.xcdatamodel; sourceTree = "<group>"; };
+		B369CF211C33A6A100CFB07D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B369CF241C33A6A100CFB07D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B369CF261C33A6A100CFB07D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B369CF2B1C33A6A100CFB07D /* ThresholdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThresholdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B369CF2F1C33A6A100CFB07D /* ThresholdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdTests.swift; sourceTree = "<group>"; };
+		B369CF311C33A6A100CFB07D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B369CF361C33A6A100CFB07D /* ThresholdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThresholdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B369CF3A1C33A6A100CFB07D /* ThresholdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdUITests.swift; sourceTree = "<group>"; };
+		B369CF3C1C33A6A100CFB07D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B369CF111C33A6A100CFB07D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B369CF281C33A6A100CFB07D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B369CF331C33A6A100CFB07D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B369CF0B1C33A6A100CFB07D = {
+			isa = PBXGroup;
+			children = (
+				B369CF161C33A6A100CFB07D /* Threshold */,
+				B369CF2E1C33A6A100CFB07D /* ThresholdTests */,
+				B369CF391C33A6A100CFB07D /* ThresholdUITests */,
+				B369CF151C33A6A100CFB07D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B369CF151C33A6A100CFB07D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B369CF141C33A6A100CFB07D /* Threshold.app */,
+				B369CF2B1C33A6A100CFB07D /* ThresholdTests.xctest */,
+				B369CF361C33A6A100CFB07D /* ThresholdUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B369CF161C33A6A100CFB07D /* Threshold */ = {
+			isa = PBXGroup;
+			children = (
+				B369CF171C33A6A100CFB07D /* AppDelegate.swift */,
+				B369CF191C33A6A100CFB07D /* ViewController.swift */,
+				B369CF1B1C33A6A100CFB07D /* Main.storyboard */,
+				B369CF211C33A6A100CFB07D /* Assets.xcassets */,
+				B369CF231C33A6A100CFB07D /* LaunchScreen.storyboard */,
+				B369CF261C33A6A100CFB07D /* Info.plist */,
+				B369CF1E1C33A6A100CFB07D /* Threshold.xcdatamodeld */,
+			);
+			path = Threshold;
+			sourceTree = "<group>";
+		};
+		B369CF2E1C33A6A100CFB07D /* ThresholdTests */ = {
+			isa = PBXGroup;
+			children = (
+				B369CF2F1C33A6A100CFB07D /* ThresholdTests.swift */,
+				B369CF311C33A6A100CFB07D /* Info.plist */,
+			);
+			path = ThresholdTests;
+			sourceTree = "<group>";
+		};
+		B369CF391C33A6A100CFB07D /* ThresholdUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B369CF3A1C33A6A100CFB07D /* ThresholdUITests.swift */,
+				B369CF3C1C33A6A100CFB07D /* Info.plist */,
+			);
+			path = ThresholdUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B369CF131C33A6A100CFB07D /* Threshold */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B369CF3F1C33A6A100CFB07D /* Build configuration list for PBXNativeTarget "Threshold" */;
+			buildPhases = (
+				B369CF101C33A6A100CFB07D /* Sources */,
+				B369CF111C33A6A100CFB07D /* Frameworks */,
+				B369CF121C33A6A100CFB07D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Threshold;
+			productName = Threshold;
+			productReference = B369CF141C33A6A100CFB07D /* Threshold.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B369CF2A1C33A6A100CFB07D /* ThresholdTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B369CF421C33A6A100CFB07D /* Build configuration list for PBXNativeTarget "ThresholdTests" */;
+			buildPhases = (
+				B369CF271C33A6A100CFB07D /* Sources */,
+				B369CF281C33A6A100CFB07D /* Frameworks */,
+				B369CF291C33A6A100CFB07D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B369CF2D1C33A6A100CFB07D /* PBXTargetDependency */,
+			);
+			name = ThresholdTests;
+			productName = ThresholdTests;
+			productReference = B369CF2B1C33A6A100CFB07D /* ThresholdTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B369CF351C33A6A100CFB07D /* ThresholdUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B369CF451C33A6A100CFB07D /* Build configuration list for PBXNativeTarget "ThresholdUITests" */;
+			buildPhases = (
+				B369CF321C33A6A100CFB07D /* Sources */,
+				B369CF331C33A6A100CFB07D /* Frameworks */,
+				B369CF341C33A6A100CFB07D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B369CF381C33A6A100CFB07D /* PBXTargetDependency */,
+			);
+			name = ThresholdUITests;
+			productName = ThresholdUITests;
+			productReference = B369CF361C33A6A100CFB07D /* ThresholdUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B369CF0C1C33A6A100CFB07D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Leo;
+				TargetAttributes = {
+					B369CF131C33A6A100CFB07D = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					B369CF2A1C33A6A100CFB07D = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = B369CF131C33A6A100CFB07D;
+					};
+					B369CF351C33A6A100CFB07D = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = B369CF131C33A6A100CFB07D;
+					};
+				};
+			};
+			buildConfigurationList = B369CF0F1C33A6A100CFB07D /* Build configuration list for PBXProject "Threshold" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B369CF0B1C33A6A100CFB07D;
+			productRefGroup = B369CF151C33A6A100CFB07D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B369CF131C33A6A100CFB07D /* Threshold */,
+				B369CF2A1C33A6A100CFB07D /* ThresholdTests */,
+				B369CF351C33A6A100CFB07D /* ThresholdUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B369CF121C33A6A100CFB07D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B369CF251C33A6A100CFB07D /* LaunchScreen.storyboard in Resources */,
+				B369CF221C33A6A100CFB07D /* Assets.xcassets in Resources */,
+				B369CF1D1C33A6A100CFB07D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B369CF291C33A6A100CFB07D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B369CF341C33A6A100CFB07D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B369CF101C33A6A100CFB07D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B369CF201C33A6A100CFB07D /* Threshold.xcdatamodeld in Sources */,
+				B369CF1A1C33A6A100CFB07D /* ViewController.swift in Sources */,
+				B369CF181C33A6A100CFB07D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B369CF271C33A6A100CFB07D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B369CF301C33A6A100CFB07D /* ThresholdTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B369CF321C33A6A100CFB07D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B369CF3B1C33A6A100CFB07D /* ThresholdUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B369CF2D1C33A6A100CFB07D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B369CF131C33A6A100CFB07D /* Threshold */;
+			targetProxy = B369CF2C1C33A6A100CFB07D /* PBXContainerItemProxy */;
+		};
+		B369CF381C33A6A100CFB07D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B369CF131C33A6A100CFB07D /* Threshold */;
+			targetProxy = B369CF371C33A6A100CFB07D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B369CF1B1C33A6A100CFB07D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B369CF1C1C33A6A100CFB07D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B369CF231C33A6A100CFB07D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B369CF241C33A6A100CFB07D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B369CF3D1C33A6A100CFB07D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B369CF3E1C33A6A100CFB07D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B369CF401C33A6A100CFB07D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Threshold/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leoandray.Threshold;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B369CF411C33A6A100CFB07D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Threshold/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leoandray.Threshold;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B369CF431C33A6A100CFB07D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ThresholdTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leoandray.ThresholdTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Threshold.app/Threshold";
+			};
+			name = Debug;
+		};
+		B369CF441C33A6A100CFB07D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ThresholdTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leoandray.ThresholdTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Threshold.app/Threshold";
+			};
+			name = Release;
+		};
+		B369CF461C33A6A100CFB07D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ThresholdUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leoandray.ThresholdUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Threshold;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B369CF471C33A6A100CFB07D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ThresholdUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = leoandray.ThresholdUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Threshold;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B369CF0F1C33A6A100CFB07D /* Build configuration list for PBXProject "Threshold" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B369CF3D1C33A6A100CFB07D /* Debug */,
+				B369CF3E1C33A6A100CFB07D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B369CF3F1C33A6A100CFB07D /* Build configuration list for PBXNativeTarget "Threshold" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B369CF401C33A6A100CFB07D /* Debug */,
+				B369CF411C33A6A100CFB07D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B369CF421C33A6A100CFB07D /* Build configuration list for PBXNativeTarget "ThresholdTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B369CF431C33A6A100CFB07D /* Debug */,
+				B369CF441C33A6A100CFB07D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B369CF451C33A6A100CFB07D /* Build configuration list for PBXNativeTarget "ThresholdUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B369CF461C33A6A100CFB07D /* Debug */,
+				B369CF471C33A6A100CFB07D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B369CF1E1C33A6A100CFB07D /* Threshold.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B369CF1F1C33A6A100CFB07D /* Threshold.xcdatamodel */,
+			);
+			currentVersion = B369CF1F1C33A6A100CFB07D /* Threshold.xcdatamodel */;
+			path = Threshold.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B369CF0C1C33A6A100CFB07D /* Project object */;
+}
