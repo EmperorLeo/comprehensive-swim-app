@@ -10,6 +10,8 @@ import UIKit
 
 class AddTimeController: UIViewController {
 
+    var event: Event?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

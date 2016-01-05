@@ -10,15 +10,24 @@ import UIKit
 
 class ManageTimesController: UITableViewController {
 
+    
+    var events: [Event]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadEvents()
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,12 +38,48 @@ class ManageTimesController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if(events == nil) {
+            return 0
+        }
+        return events!.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if let events = self.events {
+            if let cell = tableView.dequeueReusableCellWithIdentifier("SwimEventCell") {
+                cell.textLabel!.text! = events[indexPath.row].toString()
+                cell.detailTextLabel!.text! = "0" //TODO: change to number of times later
+                return cell
+            }
+        }
+        reloadEvents()
+        return UITableViewCell()
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let events = self.events {
+            performSegueWithIdentifier("AddTimeSegue", sender: events[indexPath.row])
+        }
+    }
+    
+    func reloadEvents() {
+        events = Models().getEvents()
+        self.tableView.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddEventSegue" {
+            (segue.destinationViewController as! AddEventController).manageTimesController = self
+        }
+        if segue.identifier == "AddTimeSegue" {
+            (segue.destinationViewController as! AddTimeController).event = sender as! Event
+        }
     }
 
     /*
