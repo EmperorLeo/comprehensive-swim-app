@@ -52,8 +52,14 @@ class ManageTimesController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let events = self.events {
             if let cell = tableView.dequeueReusableCellWithIdentifier("SwimEventCell") {
-                cell.textLabel!.text! = events[indexPath.row].toString()
-                cell.detailTextLabel!.text! = "0" //TODO: change to number of times later
+                let event = events[indexPath.row]
+                cell.textLabel!.text! = event.toString()
+                let numTimes = Models().getTimes(event).count
+                var description = "times"
+                if(numTimes == 1) {
+                    description = "time"
+                }
+                cell.detailTextLabel!.text! = "\(String(numTimes)) \(description)"
                 return cell
             }
         }
@@ -70,6 +76,7 @@ class ManageTimesController: UITableViewController {
     
     func reloadEvents() {
         events = Models().getEvents()
+        events!.sortInPlace()
         self.tableView.reloadData()
     }
     

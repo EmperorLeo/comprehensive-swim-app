@@ -20,6 +20,11 @@
 		B369CF4C1C33D0E500CFB07D /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF4B1C33D0E500CFB07D /* AddEventController.swift */; };
 		B369CF4E1C33D0F600CFB07D /* AddTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF4D1C33D0F600CFB07D /* AddTimeController.swift */; };
 		B369CF511C33D39B00CFB07D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF501C33D39B00CFB07D /* Models.swift */; };
+		B373C4B81C3C9299002309DB /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4B61C3C9299002309DB /* Event+CoreDataProperties.swift */; };
+		B373C4B91C3C9299002309DB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4B71C3C9299002309DB /* Event.swift */; };
+		B373C4BC1C3C97D9002309DB /* Time+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4BA1C3C97D9002309DB /* Time+CoreDataProperties.swift */; };
+		B373C4BD1C3C97D9002309DB /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4BB1C3C97D9002309DB /* Time.swift */; };
+		B373C4BF1C3CA217002309DB /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4BE1C3CA217002309DB /* TimePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,11 @@
 		B369CF4B1C33D0E500CFB07D /* AddEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
 		B369CF4D1C33D0F600CFB07D /* AddTimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTimeController.swift; sourceTree = "<group>"; };
 		B369CF501C33D39B00CFB07D /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B373C4B61C3C9299002309DB /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B373C4B71C3C9299002309DB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		B373C4BA1C3C97D9002309DB /* Time+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Time+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B373C4BB1C3C97D9002309DB /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		B373C4BE1C3CA217002309DB /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		E1059B512F21BCB3552255BF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B334D33F1C35E8B600F0ADCF /* EventPicker.swift */,
+				B373C4BE1C3CA217002309DB /* TimePicker.swift */,
 			);
 			name = Pickers;
 			sourceTree = "<group>";
@@ -139,6 +150,7 @@
 		B369CF161C33A6A100CFB07D /* Threshold */ = {
 			isa = PBXGroup;
 			children = (
+				B373C4B51C3C9195002309DB /* Models */,
 				B334D33C1C35E0CA00F0ADCF /* Pickers */,
 				B369CF481C33D09700CFB07D /* ViewControllers */,
 				B369CF171C33A6A100CFB07D /* AppDelegate.swift */,
@@ -147,7 +159,6 @@
 				B369CF231C33A6A100CFB07D /* LaunchScreen.storyboard */,
 				B369CF261C33A6A100CFB07D /* Info.plist */,
 				B369CF1E1C33A6A100CFB07D /* Threshold.xcdatamodeld */,
-				B369CF501C33D39B00CFB07D /* Models.swift */,
 			);
 			path = Threshold;
 			sourceTree = "<group>";
@@ -178,6 +189,18 @@
 				B369CF4D1C33D0F600CFB07D /* AddTimeController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B373C4B51C3C9195002309DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B369CF501C33D39B00CFB07D /* Models.swift */,
+				B373C4BA1C3C97D9002309DB /* Time+CoreDataProperties.swift */,
+				B373C4BB1C3C97D9002309DB /* Time.swift */,
+				B373C4B61C3C9299002309DB /* Event+CoreDataProperties.swift */,
+				B373C4B71C3C9299002309DB /* Event.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,12 +385,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B373C4BF1C3CA217002309DB /* TimePicker.swift in Sources */,
 				B369CF201C33A6A100CFB07D /* Threshold.xcdatamodeld in Sources */,
+				B373C4B91C3C9299002309DB /* Event.swift in Sources */,
+				B373C4BD1C3C97D9002309DB /* Time.swift in Sources */,
 				B369CF4A1C33D0C700CFB07D /* ManageTimesController.swift in Sources */,
 				B334D3401C35E8B600F0ADCF /* EventPicker.swift in Sources */,
 				B369CF4C1C33D0E500CFB07D /* AddEventController.swift in Sources */,
 				B369CF511C33D39B00CFB07D /* Models.swift in Sources */,
 				B369CF181C33A6A100CFB07D /* AppDelegate.swift in Sources */,
+				B373C4B81C3C9299002309DB /* Event+CoreDataProperties.swift in Sources */,
+				B373C4BC1C3C97D9002309DB /* Time+CoreDataProperties.swift in Sources */,
 				B369CF4E1C33D0F600CFB07D /* AddTimeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,10 +537,13 @@
 			baseConfigurationReference = E1059B512F21BCB3552255BF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Threshold/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = leoandray.Threshold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -521,10 +552,12 @@
 			baseConfigurationReference = 8CB09AE81556F12CA8B3988C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Threshold/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = leoandray.Threshold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 			};
 			name = Release;
 		};

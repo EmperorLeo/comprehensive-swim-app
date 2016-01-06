@@ -370,9 +370,20 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Time Details" id="F4n-aL-Egx">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="maE-71-KWf"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="maE-71-KWf">
+                            <connections>
+                                <action selector="addPressed:" destination="F02-vK-pza" id="P7N-V0-StN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="clubField" destination="LKS-pu-wPq" id="7Ti-25-Ig5"/>
+                        <outlet property="dateField" destination="vKq-hJ-3ci" id="qEg-Ko-fTd"/>
+                        <outlet property="meetField" destination="upX-RG-pRG" id="e4z-aW-FEj"/>
+                        <outlet property="notesTextView" destination="pvI-IA-pkF" id="tti-K0-r0X"/>
+                        <outlet property="timeField" destination="s3i-a9-TEc" id="yqO-lS-pHl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cT-XW-fhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

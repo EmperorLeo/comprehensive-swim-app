@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15A284" minimumToolsVersion="Automatic">
-    <entity name="Event" syncable="YES">
-        <attribute name="distance" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="measurement" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="stroke" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <attribute name="distance" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="measurement" attributeType="String" syncable="YES"/>
+        <attribute name="stroke" attributeType="String" syncable="YES"/>
+        <relationship name="times" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Time" inverseName="event" inverseEntity="Time" syncable="YES"/>
+    </entity>
+    <entity name="Time" representedClassName="Time" syncable="YES">
+        <attribute name="clubName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="meetName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="times" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Time" positionX="144" positionY="-108" width="128" height="133"/>
     </elements>
 </model>
