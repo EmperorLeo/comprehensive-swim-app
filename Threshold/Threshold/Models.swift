@@ -43,7 +43,7 @@ class Models {
 //        }
 //    }
     
-    func getEvents() -> [Event]? {
+    func getEvents() -> [Event] {
         let fetchRequest = NSFetchRequest()
         let eventEntity = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedContext)
         fetchRequest.entity = eventEntity
@@ -62,16 +62,87 @@ class Models {
     }
     
     
-    func addTime(event: Event, time: Double, date: Double, meetName: String?, clubName: String?, notes: String?) -> Bool {
+    func addTime(event: Event, time: Double, finalsTime: Double?, date: NSDate, meetName: String?, clubName: String?, notes: String?) -> Bool {
         let timeEntity = NSEntityDescription.entityForName("Time", inManagedObjectContext: managedContext)
         let timeObject = Time(entity: timeEntity!, insertIntoManagedObjectContext: managedContext)
         timeObject.time = NSNumber(double: time)
-        timeObject.date = NSNumber(double: date)
+        if let finalsTime = finalsTime {
+            timeObject.finalsTime = finalsTime
+        }
+        timeObject.meetDate = getDate(date)!
         timeObject.meetName = meetName
         timeObject.clubName = clubName
         timeObject.notes = notes
         timeObject.event = event
         
+//        var best: Bool? = true
+        let times = getTimes(event).sort()
+        
+        var bestTimeToDate: Double?
+        
+        for someTime in times {
+            
+            let timeToCheck = getBestOfTwo(Double(someTime.time), two: Double(someTime.finalsTime ?? someTime.time))
+
+            if bestTimeToDate != nil {
+                
+                if bestTimeToDate > timeToCheck {
+                    someTime.best = true
+                    bestTimeToDate = timeToCheck
+                }
+                else if bestTimeToDate == timeToCheck {
+                    someTime.best = nil
+                }
+                else {
+                    someTime.best = false
+                }
+                
+            }
+            else {
+                someTime.best = nil
+                bestTimeToDate = timeToCheck
+            }
+            
+        }
+        
+        //old best time code
+//        if times.count == 1 {
+//            best = nil
+//        }
+//        else {
+//            
+//            //best time of prelims finals for time to add
+//            let bestOfTwo = getBestOfTwo(time, two: finalsTime)
+//            
+//            for otherTime in times {
+//                
+//                //best time of prelims finals for other time
+//                let otherTimeBest = getBestOfTwo(Double(otherTime.time), two: Double(otherTime.finalsTime ?? otherTime.time))
+//                
+//                if(otherTime == timeObject) {
+//                    continue
+//                }
+//                
+//                if(otherTimeBest < bestOfTwo && otherTime.meetDate.date.timeIntervalSince1970 <= date.timeIntervalSince1970) {
+//                    best = false
+//                }
+//                
+//                if(otherTimeBest == bestOfTwo && otherTime.meetDate.date.timeIntervalSince1970 <= date.timeIntervalSince1970 && best == true) {
+//                    best = nil
+//                }
+//                
+//                if(otherTimeBest > bestOfTwo && otherTime.meetDate.date.timeIntervalSince1970 >= date.timeIntervalSince1970) {
+//                    otherTime.best = false
+//                }
+//                
+//                if(otherTimeBest == bestOfTwo && otherTime.meetDate.date.timeIntervalSince1970 >= date.timeIntervalSince1970 && otherTime.best == true) {
+//                    otherTime.best = nil
+//                }
+//                                
+//            }
+//        }
+//        
+//        timeObject.best = best
         
         do {
             try managedContext.save()
@@ -88,10 +159,97 @@ class Models {
         return [Time]()
     }
     
+    func getDate(date: NSDate) -> MeetDate? {
+        let fetchRequest = NSFetchRequest()
+        let dateEntity = NSEntityDescription.entityForName("MeetDate", inManagedObjectContext: managedContext)
+        fetchRequest.entity = dateEntity
+        print(date.timeIntervalSince1970)
+        fetchRequest.predicate = NSPredicate(format: "date == %@", date)
+        
+        do {
+            if let fetchResult = try managedContext.executeFetchRequest(fetchRequest) as? [MeetDate] {
+                if(fetchResult.count > 0) {
+                    return fetchResult[0]
+                }
+                else {
+                    let dateEntity = NSEntityDescription.entityForName("MeetDate", inManagedObjectContext:managedContext)
+                    let dateObject = MeetDate(entity: dateEntity!, insertIntoManagedObjectContext: managedContext)
+                    dateObject.date = date
+                    //                try managedContext.save()
+                    return dateObject
+                }
+            }
+            else {
+                return nil
+            }
+        } catch {
+            print("error")
+            return nil
+        }
+        
+    }
+    
+    func getDates() -> [MeetDate] {
+        
+        let fetchRequest = NSFetchRequest()
+        let dateEntity = NSEntityDescription.entityForName("MeetDate", inManagedObjectContext: managedContext)
+        fetchRequest.entity = dateEntity
+
+        var dates = [MeetDate]()
+        do {
+            if let fetchResults = try managedContext.executeFetchRequest(fetchRequest) as? [MeetDate] {
+                dates = fetchResults
+            }
+            return dates
+        } catch {
+            print("error")
+            return dates
+        }
+        
+        
+    }
+    
+    func dateAlreadyHasTime(date: NSDate, event: Event) -> Bool {
+//        let fetchRequest = NSFetchRequest()
+//        let dateEntity = NSEntityDescription.entityForName("MeetDate", inManagedObjectContext: managedContext)
+//        fetchRequest.entity = dateEntity
+//        fetchRequest.predicate = NSPredicate(format: "", date)
+        if let date = getDate(date) {
+            do {
+                try managedContext.save()
+            } catch {
+                print("error")
+            }
+            if(date.times == nil || date.times!.count == 0) {
+                return true
+            }
+            for time in date.times!.allObjects as! [Time] {
+                if time.event!.objectID == event.objectID {
+                    return false
+                }
+            }
+//            let fetchRequest = NSFetchRequest()
+//            let timeEntity = NSEntityDescription.entityForName("Time", inManagedObjectContext: managedContext)
+//            fetchRequest.entity = timeEntity
+//            fetchRequest.predicate = NSPredicate(format: "%@ CONTAINS ", date.times!)
+        }
+        return true
+    }
+    
     
     func removeObject(id: NSManagedObjectID) {
         let object = managedContext.objectWithID(id)
         managedContext.deleteObject(object)
+    }
+    
+    //helpers
+    func getBestOfTwo(one: Double, two: Double?) -> Double {
+        if(two == nil) {
+            return one
+        }
+        else {
+            return min(one, two!)
+        }
     }
     
 }

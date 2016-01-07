@@ -2,3 +2,5 @@ platform :ios, '8.0'
 use_frameworks!
 
 pod 'Charts'
+pod 'MMSpreadsheetView', :git => 'https://github.com/EmperorLeo/MMSpreadsheetView.git'
+pod 'CMPopTipView', :git => 'https://github.com/EmperorLeo/CMPopTipView.git'

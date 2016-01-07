@@ -1,10 +1,30 @@
 PODS:
   - Charts (2.1.6)
+  - CMPopTipView (2.2.0)
+  - MMSpreadsheetView (0.0.3)
 
 DEPENDENCIES:
   - Charts
+  - CMPopTipView (from `https://github.com/EmperorLeo/CMPopTipView.git`)
+  - MMSpreadsheetView (from `https://github.com/EmperorLeo/MMSpreadsheetView.git`)
+
+EXTERNAL SOURCES:
+  CMPopTipView:
+    :git: https://github.com/EmperorLeo/CMPopTipView.git
+  MMSpreadsheetView:
+    :git: https://github.com/EmperorLeo/MMSpreadsheetView.git
+
+CHECKOUT OPTIONS:
+  CMPopTipView:
+    :commit: 69c51e388eedc7025a99670fe2f3a0c9c5899e54
+    :git: https://github.com/EmperorLeo/CMPopTipView.git
+  MMSpreadsheetView:
+    :commit: 70b553ed8b6f94078278571ab57c678e0a57d90e
+    :git: https://github.com/EmperorLeo/MMSpreadsheetView.git
 
 SPEC CHECKSUMS:
   Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
+  CMPopTipView: cb906de2a08c52d1304dc7a37f3d2246f13deee8
+  MMSpreadsheetView: 93ba790e822cefc6126299d22319d5f1b44abd01
 
 COCOAPODS: 0.39.0

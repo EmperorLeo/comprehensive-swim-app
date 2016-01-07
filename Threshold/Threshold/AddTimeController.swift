@@ -8,19 +8,22 @@
 
 import UIKit
 
-class AddTimeController: UIViewController {
+class AddTimeController: UIViewController, UITextFieldDelegate {
 
     var event: Event?
     var dateFormatter: NSDateFormatter?
     
     var timePicker: TimePicker?
+    var finalsTimePicker: TimePicker?
     var datePicker: UIDatePicker?
     
     @IBOutlet weak var timeField: UITextField!
+    @IBOutlet weak var finalsTime: UITextField!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var meetField: UITextField!
     @IBOutlet weak var clubField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
+    @IBOutlet weak var prelimsFinalsChooser: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +35,36 @@ class AddTimeController: UIViewController {
         
         timePicker = TimePicker()
         timeField.inputView = timePicker!
+        finalsTimePicker = TimePicker()
+        finalsTime.inputView = finalsTimePicker!
         datePicker = UIDatePicker()
         datePicker!.datePickerMode = .Date
         dateField.inputView = datePicker
 
         let timeToolbar = makeToolbar("finishTime")
+        let finalsTimeToolbar = makeToolbar("finishFinalsTime")
         let dateToolbar = makeToolbar("finishDate")
         timeField.inputAccessoryView = timeToolbar
+        finalsTime.inputAccessoryView = finalsTimeToolbar
         dateField.inputAccessoryView = dateToolbar
         timeToolbar.sizeToFit()
+        finalsTimeToolbar.sizeToFit()
         dateToolbar.sizeToFit()
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if let meetFieldText = userDefaults.valueForKey("meetField") {
+            meetField.text = meetFieldText as! String
+        }
+        if let clubFieldText = userDefaults.valueForKey("clubField") {
+            clubField.text = clubFieldText as! String
+        }
+        
+        timeField.delegate = self
+        finalsTime.delegate = self
+        dateField.delegate = self
+        meetField.delegate = self
+        clubField.delegate = self
+        
         // Do any additional setup after loading the view.
     }
 
@@ -55,6 +78,12 @@ class AddTimeController: UIViewController {
         timeField.text = timeInSeconds
         timeField.resignFirstResponder()
 //        let interval = NSTimeInterval(timeInSeconds)
+    }
+    
+    func finishFinalsTime(sender: AnyObject?) {
+        let timeInSeconds = finalsTimePicker!.getSelectedTimeString()
+        finalsTime.text = timeInSeconds
+        finalsTime.resignFirstResponder()
     }
     
     func finishDate(sender: AnyObject?) {
@@ -73,8 +102,23 @@ class AddTimeController: UIViewController {
         return toolbar
     }
     
+    @IBAction func timeTypeChanged(sender: UISegmentedControl) {
+        if prelimsFinalsChooser.selectedSegmentIndex == 0 {
+            finalsTime.hidden = true
+            timeField.placeholder = "Time"
+        } else if prelimsFinalsChooser.selectedSegmentIndex == 1 {
+            finalsTime.hidden = false
+            timeField.placeholder = "Prelims Time"
+        }
+        
+        
+    }
+    
     @IBAction func addPressed(sender: UIBarButtonItem) {
-        let requiredFields = [timeField, dateField]
+        var requiredFields = [timeField, dateField]
+        if(prelimsFinalsChooser.selectedSegmentIndex == 1) {
+            requiredFields.append(finalsTime)
+        }
         var canSave = true
         for field in requiredFields {
             if field.text!.isEmpty {
@@ -84,11 +128,51 @@ class AddTimeController: UIViewController {
             }
         }
         if(canSave) {
-            Models().addTime(event!, time: timePicker!.getSelectedTime(), date: datePicker!.date.timeIntervalSince1970, meetName: meetField.text, clubName: clubField.text, notes: notesTextView.text)
+            canSave = Models().dateAlreadyHasTime(dateFormatter!.dateFromString(dateField.text!)!, event: event!)
+            if(!canSave) {
+                let alert = UIAlertController(title: "Time Exists", message: "You already have a time for this event on this date.", preferredStyle: .Alert)
+                let alertAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                alert.addAction(alertAction)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+
+        if(canSave) {
+            var finalsTimeDouble: Double?
+            if(prelimsFinalsChooser.selectedSegmentIndex == 1) {
+                finalsTimeDouble = finalsTimePicker!.getSelectedTime()
+            }
+            
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            
+            userDefaults.setValue(meetField.text, forKey: "meetField")
+            userDefaults.setValue(clubField.text, forKey: "clubField")
+            
+            Models().addTime(event!, time: timePicker!.getSelectedTime(), finalsTime: finalsTimeDouble, date: dateFormatter!.dateFromString(dateField.text!)!, meetName: trimToNull(meetField.text), clubName: trimToNull(clubField.text), notes: trimToNull(notesTextView.text))
             navigationController!.popViewControllerAnimated(true)
         }
     }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.text = nil
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
+    private func trimToNull(str: String?) -> String? {
+        if let str = str {
+            if str.isEmpty {
+                return nil
+            }
+            else {
+                return str
+            }
+        }
+        return str
+    }
     /*
     // MARK: - Navigation
 

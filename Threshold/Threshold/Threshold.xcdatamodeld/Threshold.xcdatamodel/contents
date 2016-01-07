@@ -6,16 +6,23 @@
         <attribute name="stroke" attributeType="String" syncable="YES"/>
         <relationship name="times" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Time" inverseName="event" inverseEntity="Time" syncable="YES"/>
     </entity>
+    <entity name="MeetDate" representedClassName=".MeetDate" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <relationship name="times" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Time" inverseName="meetDate" inverseEntity="Time" syncable="YES"/>
+    </entity>
     <entity name="Time" representedClassName="Time" syncable="YES">
+        <attribute name="best" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="clubName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="finalsTime" optional="YES" attributeType="Double" syncable="YES"/>
         <attribute name="meetName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="times" inverseEntity="Event" syncable="YES"/>
+        <relationship name="meetDate" maxCount="1" deletionRule="Nullify" destinationEntity="MeetDate" inverseName="times" inverseEntity="MeetDate" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="Time" positionX="144" positionY="-108" width="128" height="133"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="MeetDate" positionX="54" positionY="-18" width="128" height="75"/>
+        <element name="Time" positionX="144" positionY="-108" width="128" height="165"/>
     </elements>
 </model>

@@ -71,10 +71,16 @@ class TimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func getSelectedTimeString() -> String {
         let minutes = String(self.selectedRowInComponent(0))
-        let seconds = self.selectedRowInComponent(1)
-        let hundredths = self.selectedRowInComponent(2)
+        let seconds = String(self.selectedRowInComponent(1))
+        let hundredths = String(self.selectedRowInComponent(2))
+        let timesArray = NSMutableArray(arrayLiteral: minutes, seconds, hundredths)
+        for(var i=0; i<3;i++) {
+            if((timesArray[i] as! String).characters.count == 1) {
+                timesArray[i] = "0" + (timesArray[i] as! String)
+            }
+        }
         
-        return "\(minutes):\(seconds).\(hundredths)"
+        return "\(timesArray[0]):\(timesArray[1]).\(timesArray[2])"
         
     }
     

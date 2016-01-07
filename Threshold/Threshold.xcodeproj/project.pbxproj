@@ -22,9 +22,16 @@
 		B369CF511C33D39B00CFB07D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF501C33D39B00CFB07D /* Models.swift */; };
 		B373C4B81C3C9299002309DB /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4B61C3C9299002309DB /* Event+CoreDataProperties.swift */; };
 		B373C4B91C3C9299002309DB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4B71C3C9299002309DB /* Event.swift */; };
-		B373C4BC1C3C97D9002309DB /* Time+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4BA1C3C97D9002309DB /* Time+CoreDataProperties.swift */; };
-		B373C4BD1C3C97D9002309DB /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4BB1C3C97D9002309DB /* Time.swift */; };
 		B373C4BF1C3CA217002309DB /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4BE1C3CA217002309DB /* TimePicker.swift */; };
+		B389423E1C3CDF2700D433F7 /* SpreadsheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389423D1C3CDF2700D433F7 /* SpreadsheetViewController.swift */; };
+		B38942441C3CEC0000D433F7 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942431C3CEC0000D433F7 /* HeaderCell.swift */; };
+		B38942461C3CEC1100D433F7 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942451C3CEC1100D433F7 /* EventCell.swift */; };
+		B38942481C3CEC1F00D433F7 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942471C3CEC1F00D433F7 /* DateCell.swift */; };
+		B389424A1C3CEC3500D433F7 /* TimesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942491C3CEC3500D433F7 /* TimesCell.swift */; };
+		B38942511C3D0D3800D433F7 /* Time+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389424F1C3D0D3800D433F7 /* Time+CoreDataProperties.swift */; };
+		B38942521C3D0D3800D433F7 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942501C3D0D3800D433F7 /* Time.swift */; };
+		B38942551C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942531C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift */; };
+		B38942561C3D0D5A00D433F7 /* MeetDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942541C3D0D5A00D433F7 /* MeetDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +74,16 @@
 		B369CF501C33D39B00CFB07D /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		B373C4B61C3C9299002309DB /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B373C4B71C3C9299002309DB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		B373C4BA1C3C97D9002309DB /* Time+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Time+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B373C4BB1C3C97D9002309DB /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		B373C4BE1C3CA217002309DB /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		B389423D1C3CDF2700D433F7 /* SpreadsheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetViewController.swift; sourceTree = "<group>"; };
+		B38942431C3CEC0000D433F7 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		B38942451C3CEC1100D433F7 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		B38942471C3CEC1F00D433F7 /* DateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		B38942491C3CEC3500D433F7 /* TimesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesCell.swift; sourceTree = "<group>"; };
+		B389424F1C3D0D3800D433F7 /* Time+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Time+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B38942501C3D0D3800D433F7 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		B38942531C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MeetDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B38942541C3D0D5A00D433F7 /* MeetDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetDate.swift; sourceTree = "<group>"; };
 		E1059B512F21BCB3552255BF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +164,7 @@
 		B369CF161C33A6A100CFB07D /* Threshold */ = {
 			isa = PBXGroup;
 			children = (
+				B38942401C3CEB7B00D433F7 /* Views */,
 				B373C4B51C3C9195002309DB /* Models */,
 				B334D33C1C35E0CA00F0ADCF /* Pickers */,
 				B369CF481C33D09700CFB07D /* ViewControllers */,
@@ -187,6 +202,7 @@
 				B369CF491C33D0C700CFB07D /* ManageTimesController.swift */,
 				B369CF4B1C33D0E500CFB07D /* AddEventController.swift */,
 				B369CF4D1C33D0F600CFB07D /* AddTimeController.swift */,
+				B389423D1C3CDF2700D433F7 /* SpreadsheetViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -195,12 +211,25 @@
 			isa = PBXGroup;
 			children = (
 				B369CF501C33D39B00CFB07D /* Models.swift */,
-				B373C4BA1C3C97D9002309DB /* Time+CoreDataProperties.swift */,
-				B373C4BB1C3C97D9002309DB /* Time.swift */,
+				B389424F1C3D0D3800D433F7 /* Time+CoreDataProperties.swift */,
+				B38942501C3D0D3800D433F7 /* Time.swift */,
 				B373C4B61C3C9299002309DB /* Event+CoreDataProperties.swift */,
 				B373C4B71C3C9299002309DB /* Event.swift */,
+				B38942531C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift */,
+				B38942541C3D0D5A00D433F7 /* MeetDate.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		B38942401C3CEB7B00D433F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B38942431C3CEC0000D433F7 /* HeaderCell.swift */,
+				B38942451C3CEC1100D433F7 /* EventCell.swift */,
+				B38942471C3CEC1F00D433F7 /* DateCell.swift */,
+				B38942491C3CEC3500D433F7 /* TimesCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,16 +416,23 @@
 			files = (
 				B373C4BF1C3CA217002309DB /* TimePicker.swift in Sources */,
 				B369CF201C33A6A100CFB07D /* Threshold.xcdatamodeld in Sources */,
+				B38942511C3D0D3800D433F7 /* Time+CoreDataProperties.swift in Sources */,
 				B373C4B91C3C9299002309DB /* Event.swift in Sources */,
-				B373C4BD1C3C97D9002309DB /* Time.swift in Sources */,
 				B369CF4A1C33D0C700CFB07D /* ManageTimesController.swift in Sources */,
+				B38942521C3D0D3800D433F7 /* Time.swift in Sources */,
 				B334D3401C35E8B600F0ADCF /* EventPicker.swift in Sources */,
+				B38942441C3CEC0000D433F7 /* HeaderCell.swift in Sources */,
+				B38942481C3CEC1F00D433F7 /* DateCell.swift in Sources */,
+				B38942461C3CEC1100D433F7 /* EventCell.swift in Sources */,
+				B389424A1C3CEC3500D433F7 /* TimesCell.swift in Sources */,
 				B369CF4C1C33D0E500CFB07D /* AddEventController.swift in Sources */,
 				B369CF511C33D39B00CFB07D /* Models.swift in Sources */,
 				B369CF181C33A6A100CFB07D /* AppDelegate.swift in Sources */,
+				B38942551C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift in Sources */,
 				B373C4B81C3C9299002309DB /* Event+CoreDataProperties.swift in Sources */,
-				B373C4BC1C3C97D9002309DB /* Time+CoreDataProperties.swift in Sources */,
 				B369CF4E1C33D0F600CFB07D /* AddTimeController.swift in Sources */,
+				B389423E1C3CDF2700D433F7 /* SpreadsheetViewController.swift in Sources */,
+				B38942561C3D0D5A00D433F7 /* MeetDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +580,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -558,6 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = leoandray.Threshold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

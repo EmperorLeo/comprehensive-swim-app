@@ -7,21 +7,22 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Spreadsheet-->
         <scene sceneID="E8Y-Ec-tvm">
             <objects>
-                <viewController id="zSb-I3-Zd0" sceneMemberID="viewController">
+                <viewController id="zSb-I3-Zd0" customClass="SpreadsheetViewController" customModule="Threshold" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yPQ-C9-Trn"/>
                         <viewControllerLayoutGuide type="bottom" id="tV9-60-gZI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mbe-gh-qFU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="pc5-hS-y0h"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <tabBarItem key="tabBarItem" title="Spreadsheet" id="pc5-hS-y0h"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4C-Ev-M4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -271,14 +272,26 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TJn-Fh-IGD">
-                                        <rect key="frame" x="8" y="91" width="584" height="309"/>
+                                        <rect key="frame" x="8" y="91" width="584" height="347"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3i-a9-TEc">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0uU-SI-RQI">
                                                 <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3i-a9-TEc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="584" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Finals Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCc-JA-RtX">
+                                                        <rect key="frame" x="584" y="0.0" width="0.0" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            </stackView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKq-hJ-3ci">
                                                 <rect key="frame" x="0.0" y="40" width="584" height="30"/>
                                                 <animations/>
@@ -297,8 +310,19 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q1C-AM-a7y">
+                                                <rect key="frame" x="0.0" y="160" width="584" height="29"/>
+                                                <animations/>
+                                                <segments>
+                                                    <segment title="Standard"/>
+                                                    <segment title="Prelims/Finals"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="timeTypeChanged:" destination="F02-vK-pza" eventType="valueChanged" id="VuT-Sf-XJ8"/>
+                                                </connections>
+                                            </segmentedControl>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yUm-sq-Zog">
-                                                <rect key="frame" x="0.0" y="160" width="584" height="149"/>
+                                                <rect key="frame" x="0.0" y="198" width="584" height="149"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="919-iY-HB9">
                                                         <rect key="frame" x="0.0" y="0.0" width="584" height="21"/>
@@ -330,13 +354,15 @@
                                         </subviews>
                                         <animations/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="0uU-SI-RQI" secondAttribute="trailing" id="6FL-ro-YGO"/>
                                             <constraint firstItem="vKq-hJ-3ci" firstAttribute="leading" secondItem="TJn-Fh-IGD" secondAttribute="leading" id="7dS-1d-rKC"/>
                                             <constraint firstItem="yUm-sq-Zog" firstAttribute="leading" secondItem="TJn-Fh-IGD" secondAttribute="leading" id="8qC-Om-8Sl"/>
                                             <constraint firstItem="LKS-pu-wPq" firstAttribute="leading" secondItem="TJn-Fh-IGD" secondAttribute="leading" id="Clk-Mb-Sa4"/>
+                                            <constraint firstItem="0uU-SI-RQI" firstAttribute="leading" secondItem="TJn-Fh-IGD" secondAttribute="leading" id="DV5-vE-qWJ"/>
                                             <constraint firstItem="upX-RG-pRG" firstAttribute="leading" secondItem="TJn-Fh-IGD" secondAttribute="leading" id="MbG-Bk-YIa"/>
                                             <constraint firstAttribute="trailing" secondItem="vKq-hJ-3ci" secondAttribute="trailing" id="Mfq-D5-k8V"/>
-                                            <constraint firstAttribute="trailing" secondItem="s3i-a9-TEc" secondAttribute="trailing" id="Qng-xn-uEH"/>
-                                            <constraint firstItem="s3i-a9-TEc" firstAttribute="leading" secondItem="TJn-Fh-IGD" secondAttribute="leading" id="idh-Ou-xH9"/>
+                                            <constraint firstItem="Q1C-AM-a7y" firstAttribute="leading" secondItem="TJn-Fh-IGD" secondAttribute="leading" id="O5Z-Dt-JfC"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q1C-AM-a7y" secondAttribute="trailing" id="cTJ-CQ-LZM"/>
                                             <constraint firstAttribute="trailing" secondItem="LKS-pu-wPq" secondAttribute="trailing" id="jB4-Lg-3Bb"/>
                                             <constraint firstAttribute="trailing" secondItem="yUm-sq-Zog" secondAttribute="trailing" id="lgy-ix-GSD"/>
                                             <constraint firstAttribute="trailing" secondItem="upX-RG-pRG" secondAttribute="trailing" id="zn8-j2-2Bg"/>
@@ -380,8 +406,10 @@
                     <connections>
                         <outlet property="clubField" destination="LKS-pu-wPq" id="7Ti-25-Ig5"/>
                         <outlet property="dateField" destination="vKq-hJ-3ci" id="qEg-Ko-fTd"/>
+                        <outlet property="finalsTime" destination="HCc-JA-RtX" id="aqa-km-aB2"/>
                         <outlet property="meetField" destination="upX-RG-pRG" id="e4z-aW-FEj"/>
                         <outlet property="notesTextView" destination="pvI-IA-pkF" id="tti-K0-r0X"/>
+                        <outlet property="prelimsFinalsChooser" destination="Q1C-AM-a7y" id="XP7-5l-OMU"/>
                         <outlet property="timeField" destination="s3i-a9-TEc" id="yqO-lS-pHl"/>
                     </connections>
                 </viewController>
@@ -578,10 +606,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="MX7-Nf-Dws" kind="relationship" relationship="viewControllers" id="yKF-kV-u1I"/>
-                        <segue destination="zSb-I3-Zd0" kind="relationship" relationship="viewControllers" id="cxo-IV-k6b"/>
                         <segue destination="7fw-Ye-ncC" kind="relationship" relationship="viewControllers" id="fi5-O5-INF"/>
                         <segue destination="HOK-bw-2zx" kind="relationship" relationship="viewControllers" id="arR-lu-8MI"/>
+                        <segue destination="zSb-I3-Zd0" kind="relationship" relationship="viewControllers" id="cxo-IV-k6b"/>
+                        <segue destination="MX7-Nf-Dws" kind="relationship" relationship="viewControllers" id="yKF-kV-u1I"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ac7-ND-kdE" userLabel="First Responder" sceneMemberID="firstResponder"/>

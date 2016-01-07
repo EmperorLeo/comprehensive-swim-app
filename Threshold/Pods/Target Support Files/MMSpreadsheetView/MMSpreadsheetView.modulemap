@@ -1,0 +1,6 @@
+framework module MMSpreadsheetView {
+  umbrella header "MMSpreadsheetView-umbrella.h"
+
+  export *
+  module * { export * }
+}

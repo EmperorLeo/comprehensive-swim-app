@@ -84,8 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/CMPopTipView.framework"
   install_framework "Pods/Charts.framework"
+  install_framework "Pods/MMSpreadsheetView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/CMPopTipView.framework"
   install_framework "Pods/Charts.framework"
+  install_framework "Pods/MMSpreadsheetView.framework"
 fi
