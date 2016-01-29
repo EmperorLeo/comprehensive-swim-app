@@ -31,7 +31,6 @@ class Time: NSManagedObject, Comparable {
         }
     }
     
-    
 }
 
 func <(left: Time, right: Time) -> Bool {

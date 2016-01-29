@@ -15,7 +15,8 @@ class HeaderCell: UICollectionViewCell {
                 
         self.backgroundColor = UIColor.blackColor()
         let title = UILabel()
-        title.text = "Hello"
+        title.text = "Threshold"
+        title.font = UIFont(name: "Chalkduster", size: 16)
         title.textColor = UIColor.whiteColor()
         title.textAlignment = .Center
         self.addSubview(title)

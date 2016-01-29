@@ -12,6 +12,36 @@ import CoreData
 @objc(Event)
 class Event: NSManagedObject, Comparable {
 
+    var goalTime: String {
+     
+        get {
+            
+            if(self.goal == nil || self.goal == 0) {
+                return ""
+            }
+            
+            let time = Double(self.goal!)
+            
+            let roundedTime = Int(time)
+            let minutes = String(roundedTime / 60)
+            var seconds = String(roundedTime % 60)
+            var millis = String(Int((time - Double(roundedTime)) * 100))
+            
+            if(seconds.characters.count == 1) {
+                seconds = "0" + seconds
+            }
+            if(millis.characters.count == 1) {
+                millis = "0" + millis
+            }
+            
+            
+            return "\(minutes):\(seconds).\(millis)"
+
+        }
+        
+    }
+    
+    
     func toString() -> String {
         return "\(distance)\(measurement) \(stroke)"
     }

@@ -62,7 +62,20 @@ class AddEventController: UIViewController, UITextFieldDelegate {
             }
         }
         
+        
         if(proceed) {
+            
+            if(Models().eventAlreadyExists(stroke.text!, measurement: measurement.text!, distance: Int(distance.text!)!)) {
+                
+                let alert = UIAlertController(title: "Cannot create event", message: "This event already exists.", preferredStyle: .Alert)
+                let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+                alert.addAction(action)
+                self.presentViewController(alert, animated: true, completion: nil)
+            
+                return
+            }
+            
+            
             Models().addEvent(stroke.text!, distance: Int(distance.text!)!, measurement: measurement.text!)
             manageTimesController!.reloadEvents()
             self.dismissViewControllerAnimated(true, completion: {})

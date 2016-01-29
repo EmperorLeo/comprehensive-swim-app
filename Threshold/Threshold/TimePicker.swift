@@ -59,6 +59,32 @@ class TimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
         return title
     }
     
+    func setSelectedTime(time: Double) {
+        
+        let roundedTime = Int(time)
+        let minutes = roundedTime / 60
+        let seconds = roundedTime % 60
+        let millis = Int((time - Double(roundedTime)) * 100)
+        
+        self.selectRow(minutes, inComponent: 0, animated: false)
+        self.selectRow(seconds, inComponent: 1, animated: false)
+        self.selectRow(millis, inComponent: 2, animated: false)
+        
+    }
+    
+    func setSelectedTimeUsingString(stringTime: String) {
+        
+        let splitArray = stringTime.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ".:"))
+        
+        let minutes = Int(splitArray[0])
+        let seconds = Int(splitArray[1])
+        let millis = Int(splitArray[2])
+        
+        self.selectRow(minutes!, inComponent: 0, animated: false)
+        self.selectRow(seconds!, inComponent: 1, animated: false)
+        self.selectRow(millis!, inComponent: 2, animated: false)
+    }
+    
     func getSelectedTime() -> Double {
         let minutes = Double(self.selectedRowInComponent(0))
         let seconds = Double(self.selectedRowInComponent(1))

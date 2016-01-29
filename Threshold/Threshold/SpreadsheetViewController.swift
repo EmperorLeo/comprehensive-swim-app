@@ -10,7 +10,7 @@ import UIKit
 import MMSpreadsheetView
 import CMPopTipView
 
-class SpreadsheetViewController: UIViewController, MMSpreadsheetViewDelegate, MMSpreadsheetViewDataSource, CMPopTipViewDelegate {
+class SpreadsheetViewController: UIViewController, MMSpreadsheetViewDelegate, MMSpreadsheetViewDataSource, CMPopTipViewDelegate, UITabBarControllerDelegate {
 
     var spreadsheet: MMSpreadsheetView?
     var events: [Event]?
@@ -26,6 +26,9 @@ class SpreadsheetViewController: UIViewController, MMSpreadsheetViewDelegate, MM
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBarController!.delegate = self
+        
         events = Models().getEvents().sort()
         dates = Models().getDates().sort()
         
@@ -194,6 +197,12 @@ class SpreadsheetViewController: UIViewController, MMSpreadsheetViewDelegate, MM
         tipView = nil
         spreadsheet!.deselectItemAtIndexPath(selected, animated: true)
         selected = nil
+    }
+    
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        if(self == viewController) {
+            self.viewDidLoad()
+        }
     }
         
 

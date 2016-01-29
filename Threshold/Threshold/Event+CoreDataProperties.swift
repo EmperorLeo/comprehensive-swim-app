@@ -17,6 +17,7 @@ extension Event {
     @NSManaged var distance: NSNumber
     @NSManaged var measurement: String
     @NSManaged var stroke: String
+    @NSManaged var goal: NSNumber?
     @NSManaged var times: NSSet?
 
 }

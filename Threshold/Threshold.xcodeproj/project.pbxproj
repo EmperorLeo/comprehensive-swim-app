@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		107B5A4406ECE71280F62566 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB90F19966046D61D63CE64 /* Pods.framework */; };
+		B32CDB9C1C58577A00EEAE9A /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CDB9B1C58577A00EEAE9A /* GoalViewController.swift */; };
 		B334D3401C35E8B600F0ADCF /* EventPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B334D33F1C35E8B600F0ADCF /* EventPicker.swift */; };
+		B35D66491C5ACB1F00529133 /* timestandards.plist in Resources */ = {isa = PBXBuildFile; fileRef = B35D66481C5ACB1F00529133 /* timestandards.plist */; };
+		B35D664D1C5B2C4200529133 /* StandardKeyConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35D664C1C5B2C4200529133 /* StandardKeyConversion.swift */; };
+		B35D664F1C5B526800529133 /* SafeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35D664E1C5B526800529133 /* SafeTextField.swift */; };
 		B369CF181C33A6A100CFB07D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369CF171C33A6A100CFB07D /* AppDelegate.swift */; };
 		B369CF1D1C33A6A100CFB07D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B369CF1B1C33A6A100CFB07D /* Main.storyboard */; };
 		B369CF201C33A6A100CFB07D /* Threshold.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B369CF1E1C33A6A100CFB07D /* Threshold.xcdatamodeld */; };
@@ -23,6 +27,8 @@
 		B373C4B81C3C9299002309DB /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4B61C3C9299002309DB /* Event+CoreDataProperties.swift */; };
 		B373C4B91C3C9299002309DB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4B71C3C9299002309DB /* Event.swift */; };
 		B373C4BF1C3CA217002309DB /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4BE1C3CA217002309DB /* TimePicker.swift */; };
+		B3871CBF1C44B87E00C3FCDB /* DemographicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3871CBE1C44B87E00C3FCDB /* DemographicsViewController.swift */; };
+		B3871CC31C44CEFF00C3FCDB /* GoalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3871CC21C44CEFF00C3FCDB /* GoalsCell.swift */; };
 		B389423E1C3CDF2700D433F7 /* SpreadsheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389423D1C3CDF2700D433F7 /* SpreadsheetViewController.swift */; };
 		B38942441C3CEC0000D433F7 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942431C3CEC0000D433F7 /* HeaderCell.swift */; };
 		B38942461C3CEC1100D433F7 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942451C3CEC1100D433F7 /* EventCell.swift */; };
@@ -54,7 +60,11 @@
 /* Begin PBXFileReference section */
 		0DB90F19966046D61D63CE64 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB09AE81556F12CA8B3988C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B32CDB9B1C58577A00EEAE9A /* GoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		B334D33F1C35E8B600F0ADCF /* EventPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPicker.swift; sourceTree = "<group>"; };
+		B35D66481C5ACB1F00529133 /* timestandards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = timestandards.plist; sourceTree = "<group>"; };
+		B35D664C1C5B2C4200529133 /* StandardKeyConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardKeyConversion.swift; sourceTree = "<group>"; };
+		B35D664E1C5B526800529133 /* SafeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeTextField.swift; sourceTree = "<group>"; };
 		B369CF141C33A6A100CFB07D /* Threshold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Threshold.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B369CF171C33A6A100CFB07D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B369CF1C1C33A6A100CFB07D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +85,8 @@
 		B373C4B61C3C9299002309DB /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B373C4B71C3C9299002309DB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		B373C4BE1C3CA217002309DB /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		B3871CBE1C44B87E00C3FCDB /* DemographicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemographicsViewController.swift; sourceTree = "<group>"; };
+		B3871CC21C44CEFF00C3FCDB /* GoalsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsCell.swift; sourceTree = "<group>"; };
 		B389423D1C3CDF2700D433F7 /* SpreadsheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetViewController.swift; sourceTree = "<group>"; };
 		B38942431C3CEC0000D433F7 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		B38942451C3CEC1100D433F7 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -139,6 +151,15 @@
 			name = Pickers;
 			sourceTree = "<group>";
 		};
+		B35D664B1C5B2C1D00529133 /* TimeStandards */ = {
+			isa = PBXGroup;
+			children = (
+				B35D66481C5ACB1F00529133 /* timestandards.plist */,
+				B35D664C1C5B2C4200529133 /* StandardKeyConversion.swift */,
+			);
+			name = TimeStandards;
+			sourceTree = "<group>";
+		};
 		B369CF0B1C33A6A100CFB07D = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +185,7 @@
 		B369CF161C33A6A100CFB07D /* Threshold */ = {
 			isa = PBXGroup;
 			children = (
+				B35D664B1C5B2C1D00529133 /* TimeStandards */,
 				B38942401C3CEB7B00D433F7 /* Views */,
 				B373C4B51C3C9195002309DB /* Models */,
 				B334D33C1C35E0CA00F0ADCF /* Pickers */,
@@ -199,10 +221,12 @@
 		B369CF481C33D09700CFB07D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B3871CBE1C44B87E00C3FCDB /* DemographicsViewController.swift */,
 				B369CF491C33D0C700CFB07D /* ManageTimesController.swift */,
 				B369CF4B1C33D0E500CFB07D /* AddEventController.swift */,
 				B369CF4D1C33D0F600CFB07D /* AddTimeController.swift */,
 				B389423D1C3CDF2700D433F7 /* SpreadsheetViewController.swift */,
+				B32CDB9B1C58577A00EEAE9A /* GoalViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -228,6 +252,8 @@
 				B38942451C3CEC1100D433F7 /* EventCell.swift */,
 				B38942471C3CEC1F00D433F7 /* DateCell.swift */,
 				B38942491C3CEC3500D433F7 /* TimesCell.swift */,
+				B3871CC21C44CEFF00C3FCDB /* GoalsCell.swift */,
+				B35D664E1C5B526800529133 /* SafeTextField.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -339,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B35D66491C5ACB1F00529133 /* timestandards.plist in Resources */,
 				B369CF251C33A6A100CFB07D /* LaunchScreen.storyboard in Resources */,
 				B369CF221C33A6A100CFB07D /* Assets.xcassets in Resources */,
 				B369CF1D1C33A6A100CFB07D /* Main.storyboard in Resources */,
@@ -418,19 +445,24 @@
 				B369CF201C33A6A100CFB07D /* Threshold.xcdatamodeld in Sources */,
 				B38942511C3D0D3800D433F7 /* Time+CoreDataProperties.swift in Sources */,
 				B373C4B91C3C9299002309DB /* Event.swift in Sources */,
+				B3871CBF1C44B87E00C3FCDB /* DemographicsViewController.swift in Sources */,
 				B369CF4A1C33D0C700CFB07D /* ManageTimesController.swift in Sources */,
+				B35D664F1C5B526800529133 /* SafeTextField.swift in Sources */,
 				B38942521C3D0D3800D433F7 /* Time.swift in Sources */,
 				B334D3401C35E8B600F0ADCF /* EventPicker.swift in Sources */,
 				B38942441C3CEC0000D433F7 /* HeaderCell.swift in Sources */,
 				B38942481C3CEC1F00D433F7 /* DateCell.swift in Sources */,
 				B38942461C3CEC1100D433F7 /* EventCell.swift in Sources */,
+				B3871CC31C44CEFF00C3FCDB /* GoalsCell.swift in Sources */,
 				B389424A1C3CEC3500D433F7 /* TimesCell.swift in Sources */,
 				B369CF4C1C33D0E500CFB07D /* AddEventController.swift in Sources */,
+				B35D664D1C5B2C4200529133 /* StandardKeyConversion.swift in Sources */,
 				B369CF511C33D39B00CFB07D /* Models.swift in Sources */,
 				B369CF181C33A6A100CFB07D /* AppDelegate.swift in Sources */,
 				B38942551C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift in Sources */,
 				B373C4B81C3C9299002309DB /* Event+CoreDataProperties.swift in Sources */,
 				B369CF4E1C33D0F600CFB07D /* AddTimeController.swift in Sources */,
+				B32CDB9C1C58577A00EEAE9A /* GoalViewController.swift in Sources */,
 				B389423E1C3CDF2700D433F7 /* SpreadsheetViewController.swift in Sources */,
 				B38942561C3D0D5A00D433F7 /* MeetDate.swift in Sources */,
 			);

@@ -30,9 +30,15 @@ class TimesCell: UICollectionViewCell {
         
         let label = UILabel(frame: CGRectMake(0,0, self.frame.width, self.frame.height))
 
-        var timeString = makeTimeString(Double(time.time))
+        let timeStandard = StandardKeyConversion.getTimeStandard(time, finals: false)
+        modifyFont(timeStandard, label: label)
+        var timeString = makeTimeString(Double(time.time)) + timeStandard
         if let finalsTime = time.finalsTime {
-            timeString += "P \(makeTimeString(Double(finalsTime)))F"
+            let finalsTimeStandard = StandardKeyConversion.getTimeStandard(time, finals: true)
+            if finalsTimeStandard.characters.count > timeStandard.characters.count {
+                modifyFont(finalsTimeStandard, label: label)
+            }
+            timeString += "P \(makeTimeString(Double(finalsTime)))\(finalsTimeStandard)F"
         }
         label.text = timeString
 
@@ -77,6 +83,16 @@ class TimesCell: UICollectionViewCell {
         }
     }
     
+    private func modifyFont(timeStandard: String, label: UILabel) {
+        
+        if timeStandard.characters.count == 3 {
+            label.font = label.font.fontWithSize(15)
+        } else if timeStandard.characters.count == 4 {
+            label.font = label.font.fontWithSize(14)
+        }
+        
+    }
+    
     private func makeTimeString(time: Double) -> String {
         
         let roundedTime = Int(time)
@@ -90,7 +106,6 @@ class TimesCell: UICollectionViewCell {
         if(millis.characters.count == 1) {
             millis = "0" + millis
         }
-        
         
         return "\(minutes):\(seconds).\(millis)"
 

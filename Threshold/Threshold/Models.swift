@@ -209,6 +209,16 @@ class Models {
         
     }
     
+//    func setGoal(event: Event, goal: Double) {
+//        event.goal = NSNumber(double: goal)
+//        do {
+//            try managedContext.save()
+//        } catch {
+//            print("error")
+//        }
+//        
+//    }
+    
     func dateAlreadyHasTime(date: NSDate, event: Event) -> Bool {
 //        let fetchRequest = NSFetchRequest()
 //        let dateEntity = NSEntityDescription.entityForName("MeetDate", inManagedObjectContext: managedContext)
@@ -236,6 +246,26 @@ class Models {
         return true
     }
     
+    func eventAlreadyExists(name: String, measurement: String, distance: Int) -> Bool {
+        
+        let fetchRequest = NSFetchRequest()
+        let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedContext)
+        fetchRequest.entity = entity
+        fetchRequest.predicate = NSPredicate(format: "distance == %d && measurement == %@ && stroke == %@", distance, measurement, name)
+        
+        do {
+            if let fetchResults = try managedContext.executeFetchRequest(fetchRequest) as? [Event] {
+                
+                
+                return fetchResults.count != 0
+            }
+
+        } catch {
+            print("error")
+        }
+        return false
+    }
+    
     
     func removeObject(id: NSManagedObjectID) {
         let object = managedContext.objectWithID(id)
@@ -253,47 +283,3 @@ class Models {
     }
     
 }
-
-//class Event: NSManagedObject {
-//    
-//    @NSManaged var stroke: String
-//    @NSManaged var distance: Int16
-//    @NSManaged var measurement: String
-//    @NSManaged var times: NSSet
-//    
-////    init(id: NSManagedObjectID, stroke: String, distance: Int, measurement: String) {
-////        self.id = id
-////        self.stroke = stroke
-////        self.distance = distance
-////        self.measurement = measurement
-////    }
-//    
-//    func toString() -> String {
-//        return "\(distance)\(measurement) \(stroke)"
-//    }
-//}
-//
-//class Time: NSManagedObject {
-//    
-//   @NSManaged var event: Event
-//   @NSManaged var time: Int32 //seconds
-//   @NSManaged var date: NSDate //time since 1970
-//   @NSManaged var meetName: String?
-//   @NSManaged var clubName: String?
-//   @NSManaged var notes: String?
-//    
-////    init(id: NSManagedObjectID, event: NSURL, time: Int32, date: NSDate, meetName: String?, clubName: String?, notes: String?) {
-////        self.id = id
-////        self.event = event
-////        self.time = time
-////        self.date = date
-////        self.meetName = meetName
-////        self.clubName = clubName
-////        self.notes = notes
-////    }
-//    
-//    func toString() -> String {
-//        return "\(time)"
-//    }
-//    
-//}

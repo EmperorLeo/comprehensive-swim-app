@@ -2,6 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15A284" minimumToolsVersion="Automatic">
     <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="distance" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="goal" optional="YES" attributeType="Double" syncable="YES"/>
         <attribute name="measurement" attributeType="String" syncable="YES"/>
         <attribute name="stroke" attributeType="String" syncable="YES"/>
         <relationship name="times" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Time" inverseName="event" inverseEntity="Time" syncable="YES"/>
@@ -21,7 +22,7 @@
         <relationship name="meetDate" maxCount="1" deletionRule="Nullify" destinationEntity="MeetDate" inverseName="times" inverseEntity="MeetDate" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="MeetDate" positionX="54" positionY="-18" width="128" height="75"/>
         <element name="Time" positionX="144" positionY="-108" width="128" height="165"/>
     </elements>
