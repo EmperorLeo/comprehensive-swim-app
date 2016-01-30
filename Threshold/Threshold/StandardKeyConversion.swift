@@ -32,7 +32,7 @@ class StandardKeyConversion {
         let standardsDict = getStandardsDict()
         
         let birthday = NSUserDefaults.standardUserDefaults().doubleForKey("age")
-        let age = Int(NSDate(timeIntervalSince1970: birthday).timeIntervalSinceNow) / (Int(3600*24*365.25))
+        let age = -1*Int(NSDate(timeIntervalSince1970: birthday).timeIntervalSinceNow) / (Int(3600*24*365.25))
         
         let genderCheck = NSUserDefaults.standardUserDefaults().objectForKey("gender")
         if birthday == 0 || genderCheck == nil {

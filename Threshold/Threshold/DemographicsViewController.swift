@@ -87,7 +87,7 @@ class DemographicsViewController: UIViewController, UITextFieldDelegate {
         defaults.setValue(gender.text!, forKey: "gender")
         
         if !age.text!.characters.isEmpty {
-            let birthday = datePicker.date.timeIntervalSince1970
+            let birthday = dateFormat.dateFromString(age.text!)!.timeIntervalSince1970
             defaults.setDouble(birthday, forKey: "age")
         } else {
             defaults.setDouble(0, forKey: "age")
