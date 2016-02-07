@@ -14,6 +14,7 @@ class AddEventController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var distance: UITextField!
     @IBOutlet weak var stroke: UITextField!
     @IBOutlet weak var measurement: UITextField!
+    @IBOutlet weak var closeButton: UIButton!
     
     var eventPicker: EventPicker?
     var fakeTextField: UITextField?
@@ -110,6 +111,11 @@ class AddEventController: UIViewController, UITextFieldDelegate {
         fakeTextField!.resignFirstResponder()
     }
 
+    @IBAction func closePressed(sender: UIButton) {
+        
+        self.dismissViewControllerAnimated(true, completion: {})
+        
+    }
     /*
     // MARK: - Navigation
 

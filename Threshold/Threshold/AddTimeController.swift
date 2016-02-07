@@ -40,6 +40,7 @@ class AddTimeController: UIViewController, UITextFieldDelegate {
         datePicker = UIDatePicker()
         datePicker!.datePickerMode = .Date
         dateField.inputView = datePicker
+        datePicker!.maximumDate = NSDate()
 
         let timeToolbar = makeToolbar("finishTime")
         let finalsTimeToolbar = makeToolbar("finishFinalsTime")
@@ -65,7 +66,10 @@ class AddTimeController: UIViewController, UITextFieldDelegate {
         meetField.delegate = self
         clubField.delegate = self
         
-        // Do any additional setup after loading the view.
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -172,6 +176,14 @@ class AddTimeController: UIViewController, UITextFieldDelegate {
             }
         }
         return str
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        //TODO
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        //TODO
     }
     /*
     // MARK: - Navigation

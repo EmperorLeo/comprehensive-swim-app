@@ -27,6 +27,9 @@
 		B373C4B81C3C9299002309DB /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4B61C3C9299002309DB /* Event+CoreDataProperties.swift */; };
 		B373C4B91C3C9299002309DB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4B71C3C9299002309DB /* Event.swift */; };
 		B373C4BF1C3CA217002309DB /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4BE1C3CA217002309DB /* TimePicker.swift */; };
+		B37D81C51C67386A00F983C9 /* TimesFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D81C41C67386A00F983C9 /* TimesFormatter.swift */; };
+		B382EEE71C5C857B00246AD4 /* USASwimmingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382EEE61C5C857B00246AD4 /* USASwimmingViewController.swift */; };
+		B382EEE91C5CA8E300246AD4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382EEE81C5CA8E300246AD4 /* DashboardViewController.swift */; };
 		B3871CBF1C44B87E00C3FCDB /* DemographicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3871CBE1C44B87E00C3FCDB /* DemographicsViewController.swift */; };
 		B3871CC31C44CEFF00C3FCDB /* GoalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3871CC21C44CEFF00C3FCDB /* GoalsCell.swift */; };
 		B389423E1C3CDF2700D433F7 /* SpreadsheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389423D1C3CDF2700D433F7 /* SpreadsheetViewController.swift */; };
@@ -85,6 +88,9 @@
 		B373C4B61C3C9299002309DB /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B373C4B71C3C9299002309DB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		B373C4BE1C3CA217002309DB /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		B37D81C41C67386A00F983C9 /* TimesFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesFormatter.swift; sourceTree = "<group>"; };
+		B382EEE61C5C857B00246AD4 /* USASwimmingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USASwimmingViewController.swift; sourceTree = "<group>"; };
+		B382EEE81C5CA8E300246AD4 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		B3871CBE1C44B87E00C3FCDB /* DemographicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemographicsViewController.swift; sourceTree = "<group>"; };
 		B3871CC21C44CEFF00C3FCDB /* GoalsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsCell.swift; sourceTree = "<group>"; };
 		B389423D1C3CDF2700D433F7 /* SpreadsheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpreadsheetViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 			children = (
 				B334D33F1C35E8B600F0ADCF /* EventPicker.swift */,
 				B373C4BE1C3CA217002309DB /* TimePicker.swift */,
+				B37D81C41C67386A00F983C9 /* TimesFormatter.swift */,
 			);
 			name = Pickers;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 				B369CF4D1C33D0F600CFB07D /* AddTimeController.swift */,
 				B389423D1C3CDF2700D433F7 /* SpreadsheetViewController.swift */,
 				B32CDB9B1C58577A00EEAE9A /* GoalViewController.swift */,
+				B382EEE61C5C857B00246AD4 /* USASwimmingViewController.swift */,
+				B382EEE81C5CA8E300246AD4 /* DashboardViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -448,10 +457,12 @@
 				B3871CBF1C44B87E00C3FCDB /* DemographicsViewController.swift in Sources */,
 				B369CF4A1C33D0C700CFB07D /* ManageTimesController.swift in Sources */,
 				B35D664F1C5B526800529133 /* SafeTextField.swift in Sources */,
+				B382EEE91C5CA8E300246AD4 /* DashboardViewController.swift in Sources */,
 				B38942521C3D0D3800D433F7 /* Time.swift in Sources */,
 				B334D3401C35E8B600F0ADCF /* EventPicker.swift in Sources */,
 				B38942441C3CEC0000D433F7 /* HeaderCell.swift in Sources */,
 				B38942481C3CEC1F00D433F7 /* DateCell.swift in Sources */,
+				B37D81C51C67386A00F983C9 /* TimesFormatter.swift in Sources */,
 				B38942461C3CEC1100D433F7 /* EventCell.swift in Sources */,
 				B3871CC31C44CEFF00C3FCDB /* GoalsCell.swift in Sources */,
 				B389424A1C3CEC3500D433F7 /* TimesCell.swift in Sources */,
@@ -460,6 +471,7 @@
 				B369CF511C33D39B00CFB07D /* Models.swift in Sources */,
 				B369CF181C33A6A100CFB07D /* AppDelegate.swift in Sources */,
 				B38942551C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift in Sources */,
+				B382EEE71C5C857B00246AD4 /* USASwimmingViewController.swift in Sources */,
 				B373C4B81C3C9299002309DB /* Event+CoreDataProperties.swift in Sources */,
 				B369CF4E1C33D0F600CFB07D /* AddTimeController.swift in Sources */,
 				B32CDB9C1C58577A00EEAE9A /* GoalViewController.swift in Sources */,
