@@ -1,34 +1,43 @@
 PODS:
-  - Bolts (1.5.1):
-    - Bolts/AppLinks (= 1.5.1)
-    - Bolts/Tasks (= 1.5.1)
-  - Bolts/AppLinks (1.5.1):
+  - Alamofire (3.2.0)
+  - Bolts (1.6.0):
+    - Bolts/AppLinks (= 1.6.0)
+    - Bolts/Tasks (= 1.6.0)
+  - Bolts/AppLinks (1.6.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.5.1)
-  - Charts (2.1.6)
+  - Bolts/Tasks (1.6.0)
+  - Charts (2.2.1):
+    - Charts/Core (= 2.2.1)
+  - Charts/Core (2.2.1)
   - CMPopTipView (2.2.0)
-  - FBSDKCoreKit (4.8.0):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc (= 4.8.0)
-    - FBSDKCoreKit/no-arc (= 4.8.0)
-  - FBSDKCoreKit/arc (4.8.0):
-    - Bolts (~> 1.1)
-  - FBSDKCoreKit/no-arc (4.8.0):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc
-  - FBSDKLoginKit (4.8.0):
+  - Fabric (1.6.5)
+  - FBSDKCoreKit (4.9.1):
+    - Bolts (~> 1.5)
+  - FBSDKLoginKit (4.9.1):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.8.0):
+  - FBSDKShareKit (4.9.1):
     - FBSDKCoreKit
   - MMSpreadsheetView (0.0.3)
+  - mopub-ios-sdk (4.3.0):
+    - mopub-ios-sdk/MoPubSDK (= 4.3.0)
+  - mopub-ios-sdk/MoPubSDK (4.3.0)
+  - TwitterCore (1.15.1):
+    - Fabric
+  - TwitterKit (1.15.1):
+    - TwitterCore (= 1.15.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 3.0)
   - Charts
   - CMPopTipView (from `https://github.com/EmperorLeo/CMPopTipView.git`)
+  - Fabric
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
   - MMSpreadsheetView (from `https://github.com/EmperorLeo/MMSpreadsheetView.git`)
+  - mopub-ios-sdk
+  - TwitterCore
+  - TwitterKit
 
 EXTERNAL SOURCES:
   CMPopTipView:
@@ -45,12 +54,17 @@ CHECKOUT OPTIONS:
     :git: https://github.com/EmperorLeo/MMSpreadsheetView.git
 
 SPEC CHECKSUMS:
-  Bolts: a12663244b1d3351c738882e71902fc74db54f64
-  Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
+  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
+  Bolts: f52a250053bb517ca874523c3913776359ab3def
+  Charts: 3ff893c1a4416ab6abed7a6d26fa1c13372f3456
   CMPopTipView: cb906de2a08c52d1304dc7a37f3d2246f13deee8
-  FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
-  FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
-  FBSDKShareKit: e7577ee3adf80fc04fb656dd133fbb522250672b
+  Fabric: 338ffd3c2afcab120638907b4251189de9ad17b3
+  FBSDKCoreKit: aee20b6d9855f15b618d4fddd1a5ad45f5a4a59d
+  FBSDKLoginKit: ec22dc49bd372b064e93d6773df4ffefb3a552a2
+  FBSDKShareKit: b8c8ef0ed173f9fc1b3c8df384a0202ce53008d4
   MMSpreadsheetView: 93ba790e822cefc6126299d22319d5f1b44abd01
+  mopub-ios-sdk: ef4aa305367b11c3bb465e9771e6622175049b03
+  TwitterCore: 12983a7464e34afbbf18881347898a9db526ac71
+  TwitterKit: b5821570887ec2d77650fa232eaec175665dc443
 
 COCOAPODS: 0.39.0

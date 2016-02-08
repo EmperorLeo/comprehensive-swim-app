@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
@@ -187,6 +188,29 @@
                                             <segue destination="ynu-6c-L3z" kind="show" id="WB7-uL-T7Z"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ooL-rt-mmw" style="IBUITableViewCellStyleDefault" id="CE8-ut-Gdj">
+                                        <rect key="frame" x="0.0" y="328" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CE8-ut-Gdj" id="cHp-Y6-jEk">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Social Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ooL-rt-mmw">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <segue destination="yfk-m4-wAF" kind="show" id="1Kf-lL-K5g"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -200,6 +224,164 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dx7-wo-sri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1300" y="1100"/>
+        </scene>
+        <!--Social Login-->
+        <scene sceneID="QJk-sT-jnE">
+            <objects>
+                <viewController id="yfk-m4-wAF" customClass="SocialLoginController" customModule="Threshold" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m1U-mh-UVY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z7m-XM-eug"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DwK-uK-zra">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RRQ-Pb-QN0">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mA-eY-R3g">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="162"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xLT-xM-eSN">
+                                                <rect key="frame" x="0.0" y="0.0" width="162" height="162"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xLT-xM-eSN" secondAttribute="height" multiplier="1:1" id="Dyl-Sm-yZM"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DcJ-Mb-UcM">
+                                                <rect key="frame" x="162" y="0.0" width="438" height="162"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHc-gm-3aJ" customClass="FBSDKLoginButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="438" height="54"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXZ-Ix-0Wc">
+                                                        <rect key="frame" x="0.0" y="54" width="438" height="54"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT4-gh-5WB">
+                                                        <rect key="frame" x="0.0" y="108" width="438" height="54"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4C-wE-dF6">
+                                        <rect key="frame" x="0.0" y="162" width="600" height="163"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b3b-8W-cWt">
+                                                <rect key="frame" x="0.0" y="0.0" width="162" height="163"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="b3b-8W-cWt" secondAttribute="height" multiplier="1:1" id="oN7-c7-shs"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vPa-63-kb2">
+                                                <rect key="frame" x="162" y="0.0" width="438" height="163"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyu-nL-f6e">
+                                                        <rect key="frame" x="0.0" y="0.0" width="438" height="82"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handle Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrD-MH-Msg">
+                                                        <rect key="frame" x="0.0" y="82" width="438" height="81"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7g9-VQ-nsE">
+                                        <rect key="frame" x="0.0" y="325" width="600" height="162"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="emq-lU-VUc">
+                                                <rect key="frame" x="0.0" y="0.0" width="162" height="162"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="emq-lU-VUc" secondAttribute="height" multiplier="1:1" id="NV0-Wg-MfX"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IlF-o4-Kex">
+                                                <rect key="frame" x="162" y="0.0" width="438" height="162"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4B6-p1-t6A">
+                                                        <rect key="frame" x="0.0" y="0.0" width="438" height="54"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egj-r5-UOK">
+                                                        <rect key="frame" x="0.0" y="54" width="438" height="54"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhU-fI-wdr">
+                                                        <rect key="frame" x="0.0" y="108" width="438" height="54"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z7m-XM-eug" firstAttribute="top" secondItem="RRQ-Pb-QN0" secondAttribute="bottom" id="4Q4-z3-9ua"/>
+                            <constraint firstItem="RRQ-Pb-QN0" firstAttribute="top" secondItem="m1U-mh-UVY" secondAttribute="bottom" id="DJo-tx-3KE"/>
+                            <constraint firstAttribute="trailing" secondItem="RRQ-Pb-QN0" secondAttribute="trailing" id="H0R-WC-ovu"/>
+                            <constraint firstItem="RRQ-Pb-QN0" firstAttribute="leading" secondItem="DwK-uK-zra" secondAttribute="leading" id="T8p-Rq-UIx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Social Login" id="VSs-V5-YmY"/>
+                    <connections>
+                        <outlet property="facebookProfilePic" destination="xLT-xM-eSN" id="CI8-h0-Nen"/>
+                        <outlet property="fbEmailLabel" destination="cT4-gh-5WB" id="3qf-dB-ucG"/>
+                        <outlet property="fbLoginButton" destination="lHc-gm-3aJ" id="EhX-2C-tnZ"/>
+                        <outlet property="fbNameLabel" destination="ZXZ-Ix-0Wc" id="AyA-oW-OaI"/>
+                        <outlet property="instagramProfilePic" destination="emq-lU-VUc" id="Lfy-Il-Ff0"/>
+                        <outlet property="mainStackView" destination="RRQ-Pb-QN0" id="vAW-D6-uGU"/>
+                        <outlet property="stackOne" destination="6mA-eY-R3g" id="Evo-Np-LF1"/>
+                        <outlet property="stackThree" destination="7g9-VQ-nsE" id="QNi-P0-QCO"/>
+                        <outlet property="stackTwo" destination="J4C-wE-dF6" id="m0v-oE-ugX"/>
+                        <outlet property="twitterHandleLabel" destination="xrD-MH-Msg" id="ovz-eQ-2LU"/>
+                        <outlet property="twitterNameLabel" destination="hyu-nL-f6e" id="CCD-RI-Uo0"/>
+                        <outlet property="twitterProfilePic" destination="b3b-8W-cWt" id="zOL-NC-LKW"/>
+                        <outlet property="twitterStack" destination="vPa-63-kb2" id="tkv-wV-Ij1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wEA-Pf-Qx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1300" y="1889"/>
         </scene>
         <!--Swimming View Controller-->
         <scene sceneID="ZDS-1N-Zug">
@@ -408,7 +590,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rzL-c7-9iy">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rzL-c7-9iy">
                                 <rect key="frame" x="20" y="72" width="560" height="477"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2tB-po-beH">
@@ -428,44 +610,10 @@
                                             <action selector="timeLengthChanged:" destination="olD-ap-s70" eventType="valueChanged" id="3rP-ae-hb1"/>
                                         </connections>
                                     </segmentedControl>
-                                    <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rsE-3c-a8a" customClass="LineChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="58" width="560" height="283"/>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsE-3c-a8a" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="48" width="560" height="344"/>
                                         <animations/>
                                     </containerView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4QS-pu-njq">
-                                        <rect key="frame" x="0.0" y="371" width="560" height="11"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Next Time Standard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdX-ik-0kl">
-                                                <rect key="frame" x="0.0" y="0.0" width="194" height="11"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time Standard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DL-mc-ycn">
-                                                <rect key="frame" x="224" y="0.0" width="112" height="11"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83M-Fm-vWG">
-                                                <rect key="frame" x="366" y="0.0" width="84" height="11"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Difference" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xw-y2-qYf">
-                                                <rect key="frame" x="480" y="0.0" width="80" height="11"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <animations/>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="RhF-yb-z6D">
                                         <rect key="frame" x="0.0" y="412" width="560" height="65"/>
                                         <subviews>
@@ -502,9 +650,7 @@
                                 </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstItem="4QS-pu-njq" firstAttribute="leading" secondItem="rzL-c7-9iy" secondAttribute="leading" id="2QG-3a-B3K"/>
                                     <constraint firstItem="RhF-yb-z6D" firstAttribute="leading" secondItem="rzL-c7-9iy" secondAttribute="leading" id="LEV-Vt-QTu"/>
-                                    <constraint firstAttribute="trailing" secondItem="4QS-pu-njq" secondAttribute="trailing" id="ZB6-Q1-tdU"/>
                                     <constraint firstAttribute="trailing" secondItem="RhF-yb-z6D" secondAttribute="trailing" id="aVr-qU-aZG"/>
                                     <constraint firstAttribute="trailing" secondItem="rsE-3c-a8a" secondAttribute="trailing" id="nVL-5J-56H"/>
                                     <constraint firstItem="rsE-3c-a8a" firstAttribute="leading" secondItem="rzL-c7-9iy" secondAttribute="leading" id="qaG-mG-Crt"/>
@@ -550,6 +696,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="fbShareButton" destination="5hO-wb-x9g" id="uYf-kv-b38"/>
                         <outlet property="graph" destination="rsE-3c-a8a" id="40T-vz-gwV"/>
                         <outlet property="timeLengthSegment" destination="2tB-po-beH" id="u9j-ZE-0fB"/>
                     </connections>

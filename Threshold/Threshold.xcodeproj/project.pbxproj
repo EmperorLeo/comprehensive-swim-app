@@ -28,6 +28,7 @@
 		B373C4B91C3C9299002309DB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4B71C3C9299002309DB /* Event.swift */; };
 		B373C4BF1C3CA217002309DB /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B373C4BE1C3CA217002309DB /* TimePicker.swift */; };
 		B37D81C51C67386A00F983C9 /* TimesFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D81C41C67386A00F983C9 /* TimesFormatter.swift */; };
+		B37D81C81C6842AE00F983C9 /* SocialLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37D81C71C6842AE00F983C9 /* SocialLoginController.swift */; };
 		B382EEE71C5C857B00246AD4 /* USASwimmingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382EEE61C5C857B00246AD4 /* USASwimmingViewController.swift */; };
 		B382EEE91C5CA8E300246AD4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382EEE81C5CA8E300246AD4 /* DashboardViewController.swift */; };
 		B3871CBF1C44B87E00C3FCDB /* DemographicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3871CBE1C44B87E00C3FCDB /* DemographicsViewController.swift */; };
@@ -89,6 +90,7 @@
 		B373C4B71C3C9299002309DB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		B373C4BE1C3CA217002309DB /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		B37D81C41C67386A00F983C9 /* TimesFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesFormatter.swift; sourceTree = "<group>"; };
+		B37D81C71C6842AE00F983C9 /* SocialLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialLoginController.swift; sourceTree = "<group>"; };
 		B382EEE61C5C857B00246AD4 /* USASwimmingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = USASwimmingViewController.swift; sourceTree = "<group>"; };
 		B382EEE81C5CA8E300246AD4 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		B3871CBE1C44B87E00C3FCDB /* DemographicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemographicsViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				B32CDB9B1C58577A00EEAE9A /* GoalViewController.swift */,
 				B382EEE61C5C857B00246AD4 /* USASwimmingViewController.swift */,
 				B382EEE81C5CA8E300246AD4 /* DashboardViewController.swift */,
+				B37D81C71C6842AE00F983C9 /* SocialLoginController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				B369CF121C33A6A100CFB07D /* Resources */,
 				40CAA4C7D45FB8A2B5A992DE /* Embed Pods Frameworks */,
 				58DF9456662EB449CFDED777 /* Copy Pods Resources */,
+				B3A0748B1C686EF4006B6675 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -443,6 +447,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B3A0748B1C686EF4006B6675 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 008ec16ab0c3989bba67ace904d2d1ff69f78b33 65acb935ad20ea5a4048e405e3d45eec13831b50ba2544080ad0abbb35a4ffef";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -456,6 +473,7 @@
 				B373C4B91C3C9299002309DB /* Event.swift in Sources */,
 				B3871CBF1C44B87E00C3FCDB /* DemographicsViewController.swift in Sources */,
 				B369CF4A1C33D0C700CFB07D /* ManageTimesController.swift in Sources */,
+				B37D81C81C6842AE00F983C9 /* SocialLoginController.swift in Sources */,
 				B35D664F1C5B526800529133 /* SafeTextField.swift in Sources */,
 				B382EEE91C5CA8E300246AD4 /* DashboardViewController.swift in Sources */,
 				B38942521C3D0D3800D433F7 /* Time.swift in Sources */,

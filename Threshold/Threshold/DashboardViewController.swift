@@ -8,11 +8,15 @@
 
 import UIKit
 import Charts
+import FBSDKShareKit
 
 class DashboardViewController: UIViewController {
 
     @IBOutlet weak var timeLengthSegment: UISegmentedControl!
     @IBOutlet weak var graph: LineChartView!
+    @IBOutlet weak var fbShareButton: FBSDKShareButton!
+    
+    
     var events = [Event]()
     var selectedIndex = 0
     let dateFormat = NSDateFormatter()
@@ -20,6 +24,23 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         events = Models().getEvents().sort()
+        chartSettings()
+        dateFormat.dateFormat = "MM-dd-YYYY"
+        if !events.isEmpty {
+            setUpChart(events[selectedIndex]);
+        } else {
+            self.navigationItem.title = "Threshold"
+        }
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func chartSettings() {
         graph.backgroundColor = UIColor.whiteColor()
         graph.descriptionText = ""
         graph.leftAxis.enabled = true
@@ -33,17 +54,21 @@ class DashboardViewController: UIViewController {
         graph.pinchZoomEnabled = false
         graph.scaleXEnabled = false
         graph.scaleYEnabled = false
-        dateFormat.dateFormat = "MM-dd-YYYY"
-        if !events.isEmpty {
-            setUpChart(events[selectedIndex]);
-        }
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    func shareSetUp() {
+        let shareContent = FBSDKShareLinkContent()
         
-        // Dispose of any resources that can be recreated.
+        let event = events[selectedIndex]
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory: NSString = paths[0]
+        let localFilePath: NSString = documentsDirectory.stringByAppendingPathComponent("\(Int(event.distance))\(event.stroke)\(event.measurement)-\(timeLengthSegment.selectedSegmentIndex).png")
+
+        
+        shareContent.imageURL = NSURL(string: localFilePath as String)!
+        shareContent.contentTitle = event.toString()
+        shareContent.contentDescription = "Progress for this event over \(timeLengthSegment.titleForSegmentAtIndex(timeLengthSegment.selectedSegmentIndex))!"
+        fbShareButton.shareContent = shareContent
     }
     
     func setUpChart(event: Event) {
@@ -52,8 +77,11 @@ class DashboardViewController: UIViewController {
         
         let times = Models().getTimes(event).sort()
         if times.count == 0 {
+            graph.clear()
             return
         }
+        
+//        graph.animate(yAxisDuration: 1.25, easingOption: ChartEasingOption.EaseOutExpo)
         
         var numDays = 0
         
@@ -79,9 +107,9 @@ class DashboardViewController: UIViewController {
             let timeDouble = Double(time.time)
             let date = time.meetDate.date.timeIntervalSince1970
             let secondsBack = today - Double(date)
-            if (secondsBack) > numSeconds {
-                continue //too far back to be a data point
-            }
+//            if (secondsBack) > numSeconds {
+//                continue //too far back to be a data point
+//            }
             
             let xIndex: Int = numDays - 1 - (Int(secondsBack) / (24*60*60))
             timeValues.append(ChartDataEntry(value: timeDouble, xIndex: xIndex))
@@ -98,15 +126,27 @@ class DashboardViewController: UIViewController {
         
         
         let dataSet = LineChartDataSet(yVals: timeValues, label: "Times")
-        dataSet.colors = [UIColor.blackColor()]
+        dataSet.colors = [UIColor.greenColor()]
+        dataSet.setCircleColor(UIColor.greenColor())
+        dataSet.fillColor = UIColor.greenColor()
+//        dataSet.fillAlpha = 1.0
 //        dataSet.drawCirclesEnabled = true
 //        dataSet.drawValuesEnabled = true
         let data = LineChartData(xVals: dateValues, dataSet: dataSet)
-    
+        
         graph.data = data
         
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory: NSString = paths[0]
+        let localFilePath: NSString = documentsDirectory.stringByAppendingPathComponent("\(Int(event.distance))\(event.stroke)\(event.measurement)-\(timeLengthSegment.selectedSegmentIndex).png")
+//        print(localFilePath as String)
+        graph.saveToPath(localFilePath as String, format: .PNG, compressionQuality: 1.0)
+//        print(saved)
 //        graph.leftAxis.customAxisMin = minTime!
 //        graph.leftAxis.customAxisMax = maxTime!
+        
+        shareSetUp()
+        
     }
     
     @IBAction func graphDurationChanged(sender: UISegmentedControl) {
@@ -143,8 +183,18 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func timeLengthChanged(sender: UISegmentedControl) {
-        setUpChart(events[selectedIndex])
+        if !events.isEmpty {
+            setUpChart(events[selectedIndex])
+        }
+        
     }
+    
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        if(self == viewController) {
+            self.viewDidLoad()
+        }
+    }
+
     
     /*
     // MARK: - Navigation

@@ -84,6 +84,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/Alamofire.framework"
   install_framework "Pods/Bolts.framework"
   install_framework "Pods/CMPopTipView.framework"
   install_framework "Pods/Charts.framework"
@@ -91,8 +92,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/FBSDKLoginKit.framework"
   install_framework "Pods/FBSDKShareKit.framework"
   install_framework "Pods/MMSpreadsheetView.framework"
+  install_framework "Pods/mopub_ios_sdk.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/Alamofire.framework"
   install_framework "Pods/Bolts.framework"
   install_framework "Pods/CMPopTipView.framework"
   install_framework "Pods/Charts.framework"
@@ -100,4 +103,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/FBSDKLoginKit.framework"
   install_framework "Pods/FBSDKShareKit.framework"
   install_framework "Pods/MMSpreadsheetView.framework"
+  install_framework "Pods/mopub_ios_sdk.framework"
 fi

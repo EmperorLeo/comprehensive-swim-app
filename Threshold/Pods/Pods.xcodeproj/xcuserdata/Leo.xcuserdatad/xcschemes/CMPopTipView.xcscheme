@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4088F6C83592863FCAA09F5F'
+               BlueprintIdentifier = '4113E48930051D5FB9EEC75D'
                BlueprintName = 'CMPopTipView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'CMPopTipView.framework'>
