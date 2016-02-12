@@ -42,6 +42,7 @@
 		B38942521C3D0D3800D433F7 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942501C3D0D3800D433F7 /* Time.swift */; };
 		B38942551C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942531C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift */; };
 		B38942561C3D0D5A00D433F7 /* MeetDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942541C3D0D5A00D433F7 /* MeetDate.swift */; };
+		B39552A31C69949100C116AB /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39552A21C69949100C116AB /* UtilityFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		B38942501C3D0D3800D433F7 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		B38942531C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MeetDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B38942541C3D0D5A00D433F7 /* MeetDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetDate.swift; sourceTree = "<group>"; };
+		B39552A21C69949100C116AB /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		E1059B512F21BCB3552255BF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 				B334D33C1C35E0CA00F0ADCF /* Pickers */,
 				B369CF481C33D09700CFB07D /* ViewControllers */,
 				B369CF171C33A6A100CFB07D /* AppDelegate.swift */,
+				B39552A21C69949100C116AB /* UtilityFunctions.swift */,
 				B369CF1B1C33A6A100CFB07D /* Main.storyboard */,
 				B369CF211C33A6A100CFB07D /* Assets.xcassets */,
 				B369CF231C33A6A100CFB07D /* LaunchScreen.storyboard */,
@@ -481,6 +484,7 @@
 				B38942441C3CEC0000D433F7 /* HeaderCell.swift in Sources */,
 				B38942481C3CEC1F00D433F7 /* DateCell.swift in Sources */,
 				B37D81C51C67386A00F983C9 /* TimesFormatter.swift in Sources */,
+				B39552A31C69949100C116AB /* UtilityFunctions.swift in Sources */,
 				B38942461C3CEC1100D433F7 /* EventCell.swift in Sources */,
 				B3871CC31C44CEFF00C3FCDB /* GoalsCell.swift in Sources */,
 				B389424A1C3CEC3500D433F7 /* TimesCell.swift in Sources */,

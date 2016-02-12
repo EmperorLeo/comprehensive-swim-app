@@ -166,17 +166,18 @@ class AddTimeController: UIViewController, UITextFieldDelegate {
         return true
     }
 
-    private func trimToNull(str: String?) -> String? {
-        if let str = str {
-            if str.isEmpty {
-                return nil
-            }
-            else {
-                return str
-            }
-        }
-        return str
-    }
+    //I placed the following fun in the utilityfunctions.swift file
+//    private func trimToNull(str: String?) -> String? {
+//        if let str = str {
+//            if str.isEmpty {
+//                return nil
+//            }
+//            else {
+//                return str
+//            }
+//        }
+//        return str
+//    }
     
     func keyboardWillShow(notification: NSNotification) {
         //TODO
