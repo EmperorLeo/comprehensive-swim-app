@@ -14,7 +14,7 @@ class Models {
     
     let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
-    func addEvent(stroke: String, distance: Int, measurement: String) -> Bool {
+    func addEvent(stroke: String, distance: Int, measurement: String) -> Event? {
         let eventEntity = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedContext)
         let event = Event(entity: eventEntity!, insertIntoManagedObjectContext: managedContext)
         event.setValue(stroke, forKeyPath: "stroke")
@@ -22,10 +22,34 @@ class Models {
         event.setValue(measurement, forKeyPath: "measurement")
         do {
             try managedContext.save()
-            return true
+            return event
         } catch {
-            return false
+            return nil
         }
+    }
+    
+    func getEvent(stroke: String, measurement: String, distance: Int) -> Event? {
+        
+        let fetchRequest = NSFetchRequest()
+        let eventEntity = NSEntityDescription.entityForName("Event", inManagedObjectContext: managedContext)
+        let strokePredicate = NSPredicate(format: "stroke == %@", stroke)
+        let measurementPredicate = NSPredicate(format: "measurement == %@", measurement)
+        let distPredicate = NSPredicate(format: "distance == %d", distance)
+//        let predicate = NSCompoundPredicate(format: "stroke == %@ && measurement == %@", stroke, measurement)
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [strokePredicate, measurementPredicate, distPredicate])
+        fetchRequest.entity = eventEntity
+        fetchRequest.predicate = predicate
+        do {
+            if let fetchResults = try managedContext.executeFetchRequest(fetchRequest) as? [Event] {
+                if fetchResults.count > 0 {
+                    return fetchResults[0]
+                }
+            }
+        } catch {
+            
+        }
+        return nil
+        
     }
     
     
@@ -163,7 +187,6 @@ class Models {
         let fetchRequest = NSFetchRequest()
         let dateEntity = NSEntityDescription.entityForName("MeetDate", inManagedObjectContext: managedContext)
         fetchRequest.entity = dateEntity
-        print(date.timeIntervalSince1970)
         fetchRequest.predicate = NSPredicate(format: "date == %@", date)
         
         do {
@@ -218,6 +241,37 @@ class Models {
 //        }
 //        
 //    }
+    
+    func getTimeWithDate(date: NSDate, event: Event?) -> Time? {
+        
+        if event == nil {
+            return nil
+        }
+        
+        let dateFetchRequest = NSFetchRequest()
+        let dateEntity = NSEntityDescription.entityForName("MeetDate", inManagedObjectContext: managedContext)
+        dateFetchRequest.entity = dateEntity
+        dateFetchRequest.predicate = NSPredicate(format: "date == %@", date)
+        
+        do {
+            if let fetchResult = try managedContext.executeFetchRequest(dateFetchRequest) as? [MeetDate] {
+                if fetchResult.count == 0 {
+                    return nil
+                }
+                for time in fetchResult[0].times!.allObjects as! [Time] {
+                    if time.event!.objectID == event!.objectID {
+                        return time
+                    }
+                }
+            }
+        } catch {
+            print("error")
+        }
+        return nil
+
+        
+        
+    }
     
     func dateAlreadyHasTime(date: NSDate, event: Event) -> Bool {
 //        let fetchRequest = NSFetchRequest()

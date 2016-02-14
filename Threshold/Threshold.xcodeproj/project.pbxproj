@@ -43,6 +43,7 @@
 		B38942551C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942531C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift */; };
 		B38942561C3D0D5A00D433F7 /* MeetDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38942541C3D0D5A00D433F7 /* MeetDate.swift */; };
 		B39552A31C69949100C116AB /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39552A21C69949100C116AB /* UtilityFunctions.swift */; };
+		B3BB98891C707C0300A3EE4F /* credits.txt in Resources */ = {isa = PBXBuildFile; fileRef = B3BB98881C707C0300A3EE4F /* credits.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		B38942531C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MeetDate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B38942541C3D0D5A00D433F7 /* MeetDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetDate.swift; sourceTree = "<group>"; };
 		B39552A21C69949100C116AB /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
+		B3BB98881C707C0300A3EE4F /* credits.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = credits.txt; sourceTree = "<group>"; };
 		E1059B512F21BCB3552255BF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +210,7 @@
 				B369CF231C33A6A100CFB07D /* LaunchScreen.storyboard */,
 				B369CF261C33A6A100CFB07D /* Info.plist */,
 				B369CF1E1C33A6A100CFB07D /* Threshold.xcdatamodeld */,
+				B3BB98881C707C0300A3EE4F /* credits.txt */,
 			);
 			path = Threshold;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				B369CF251C33A6A100CFB07D /* LaunchScreen.storyboard in Resources */,
 				B369CF221C33A6A100CFB07D /* Assets.xcassets in Resources */,
 				B369CF1D1C33A6A100CFB07D /* Main.storyboard in Resources */,
+				B3BB98891C707C0300A3EE4F /* credits.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

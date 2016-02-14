@@ -17,6 +17,7 @@ class AddTimeController: UIViewController, UITextFieldDelegate {
     var finalsTimePicker: TimePicker?
     var datePicker: UIDatePicker?
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var finalsTime: UITextField!
     @IBOutlet weak var dateField: UITextField!
@@ -181,10 +182,21 @@ class AddTimeController: UIViewController, UITextFieldDelegate {
     
     func keyboardWillShow(notification: NSNotification) {
         //TODO
+        let info: NSDictionary = notification.userInfo!
+        let kbSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue.size
+        let contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize!.height, 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        
+        
     }
     
     func keyboardWillHide(notification: NSNotification) {
         //TODO
+        let contentInsets = UIEdgeInsetsZero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+
     }
     /*
     // MARK: - Navigation

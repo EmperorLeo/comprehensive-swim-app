@@ -11,10 +11,12 @@ import Foundation
 class StandardKeyConversion {
     static var standardsDict: NSDictionary? = nil
     
-    static var strokes: [String: String] = ["Freestyle": "Free", "Backstroke": "Back", "Breaststroke": "Breast", "Butterfly": "Fly"]
+    static var strokes: [String: String] = ["Freestyle": "Free", "Backstroke": "Back", "Breaststroke": "Breast", "Butterfly": "Fly", "IM": "IM"]
     static var measurements: [String: String] = ["SCY": "Y", "SCM": "SCM", "LCM": "LCM"]
     
     static var genders: [String: String] = ["BOY": "Boys", "GIRL": "Girls", "MALE": "Boys", "FEMALE": "Girls", "MAN": "Boys", "WOMAN": "Girls"]
+    
+    static var strokeAbbreviations: [String: String] = ["FR": "Freestyle", "BK": "Backstroke", "BR": "Breaststroke", "FL": "Butterfly", "IM": "IM"]
     
     class func getKey(event: Event) -> String {
         return String(event.distance) + strokes[event.stroke]! + measurements[event.measurement]!
@@ -88,6 +90,13 @@ class StandardKeyConversion {
             }
         }
         
+        return ""
+    }
+    
+    class func getStrokeFromAbbrev(abbrev: String) -> String {
+        if let stroke = strokeAbbreviations[abbrev] {
+            return stroke
+        }
         return ""
     }
     

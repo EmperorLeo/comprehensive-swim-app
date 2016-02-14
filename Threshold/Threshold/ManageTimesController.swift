@@ -53,13 +53,26 @@ class ManageTimesController: UITableViewController {
         if let events = self.events {
             if let cell = tableView.dequeueReusableCellWithIdentifier("SwimEventCell") {
                 let event = events[indexPath.row]
-                cell.textLabel!.text! = event.toString()
+                (cell.viewWithTag(1) as! UILabel).text = event.toString()
                 let numTimes = Models().getTimes(event).count
                 var description = "times"
                 if(numTimes == 1) {
                     description = "time"
                 }
-                cell.detailTextLabel!.text! = "\(String(numTimes)) \(description)"
+                (cell.viewWithTag(2) as! UILabel).text! = "\(String(numTimes)) \(description)"
+                cell.contentView.layer.borderColor = UIColor.blackColor().CGColor
+                cell.contentView.layer.borderWidth = 1
+                let color = getTableCellColor(indexPath)
+                (cell.viewWithTag(1) as! UILabel).backgroundColor = color
+                (cell.viewWithTag(2) as! UILabel).backgroundColor = color
+                cell.contentView.layer.backgroundColor = color.CGColor
+                (cell.viewWithTag(3) as! UIImageView).image = getImageForStroke(event.stroke)
+                
+                let leftBorder = CALayer()
+                leftBorder.backgroundColor = UIColor.blackColor().CGColor
+                leftBorder.frame = CGRectMake(0, 0, 1, 70)
+                (cell.viewWithTag(3) as! UIImageView).layer.addSublayer(leftBorder)
+                
                 return cell
             }
         }
