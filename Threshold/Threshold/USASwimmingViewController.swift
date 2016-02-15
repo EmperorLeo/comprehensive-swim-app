@@ -29,6 +29,9 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
         super.viewDidLoad()
         
         self.view.backgroundColor = ThresholdColor.greenColor
+        self.eventsTableView.backgroundColor = ThresholdColor.greenColor
+        self.peopleTableView.backgroundColor = ThresholdColor.greenColor
+        
         self.loadTimesButton.backgroundColor = ThresholdColor.blueColor
         self.loadTimesButton.layer.borderColor = ThresholdColor.bredColor.CGColor
         self.loadTimesButton.layer.borderWidth = 1
@@ -61,6 +64,9 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
     
     @IBAction func loadTimesIntoDatabase(sender: UIButton) {
         
+        progressLabel?.text = "Downloading times..."
+        progressFrame?.hidden = false
+        progress?.startAnimating()
         
         for (row, x) in eventBuffer.enumerate() {
             
@@ -90,6 +96,8 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
             
             
         }
+        progress?.stopAnimating()
+        progressFrame?.removeFromSuperview()
         self.navigationController?.popToRootViewControllerAnimated(true)
         
         
@@ -157,7 +165,7 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
         else {
             self.displaySearchError("There are no results for this swimmer.")
             self.progress!.stopAnimating()
-            self.progressFrame!.removeFromSuperview()
+            self.progressFrame!.hidden = true
         }
         
 
@@ -215,7 +223,7 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
             self.eventsTableView.reloadData()
             self.loadTimesButton.hidden = false
             self.progress!.stopAnimating()
-            self.progressFrame!.removeFromSuperview()
+            self.progressFrame!.hidden = true
 
         }
         

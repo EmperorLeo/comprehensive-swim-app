@@ -99,7 +99,7 @@ class ManageTimesController: UITableViewController {
             (segue.destinationViewController as! AddEventController).manageTimesController = self
         }
         if segue.identifier == "AddTimeSegue" {
-            (segue.destinationViewController as! AddTimeController).event = sender as! Event
+            (segue.destinationViewController as! AddTimeController).event = sender as? Event
         }
     }
 

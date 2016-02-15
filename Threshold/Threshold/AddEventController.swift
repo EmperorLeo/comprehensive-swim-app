@@ -25,6 +25,7 @@ class AddEventController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = ThresholdColor.greenColor
+        themeUIViews([distance, stroke, measurement])
         fakeTextField = UITextField()
         fakeTextField?.hidden = true
         self.view.addSubview(fakeTextField!)

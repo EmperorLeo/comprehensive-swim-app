@@ -10,6 +10,9 @@
 		107B5A4406ECE71280F62566 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB90F19966046D61D63CE64 /* Pods.framework */; };
 		B32CDB9C1C58577A00EEAE9A /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CDB9B1C58577A00EEAE9A /* GoalViewController.swift */; };
 		B334D3401C35E8B600F0ADCF /* EventPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B334D33F1C35E8B600F0ADCF /* EventPicker.swift */; };
+		B34C010A1C71BC4200A92C8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34C01091C71BC4200A92C8D /* SettingsViewController.swift */; };
+		B34E64B81C725B33003165A8 /* GeneralNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34E64B71C725B33003165A8 /* GeneralNavigationController.swift */; };
+		B359E29A1C72842800B24687 /* GeneralTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B359E2991C72842800B24687 /* GeneralTabBarController.swift */; };
 		B35D66491C5ACB1F00529133 /* timestandards.plist in Resources */ = {isa = PBXBuildFile; fileRef = B35D66481C5ACB1F00529133 /* timestandards.plist */; };
 		B35D664D1C5B2C4200529133 /* StandardKeyConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35D664C1C5B2C4200529133 /* StandardKeyConversion.swift */; };
 		B35D664F1C5B526800529133 /* SafeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35D664E1C5B526800529133 /* SafeTextField.swift */; };
@@ -68,6 +71,9 @@
 		8CB09AE81556F12CA8B3988C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B32CDB9B1C58577A00EEAE9A /* GoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		B334D33F1C35E8B600F0ADCF /* EventPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPicker.swift; sourceTree = "<group>"; };
+		B34C01091C71BC4200A92C8D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B34E64B71C725B33003165A8 /* GeneralNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralNavigationController.swift; sourceTree = "<group>"; };
+		B359E2991C72842800B24687 /* GeneralTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralTabBarController.swift; sourceTree = "<group>"; };
 		B35D66481C5ACB1F00529133 /* timestandards.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = timestandards.plist; sourceTree = "<group>"; };
 		B35D664C1C5B2C4200529133 /* StandardKeyConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardKeyConversion.swift; sourceTree = "<group>"; };
 		B35D664E1C5B526800529133 /* SafeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeTextField.swift; sourceTree = "<group>"; };
@@ -245,6 +251,9 @@
 				B382EEE61C5C857B00246AD4 /* USASwimmingViewController.swift */,
 				B382EEE81C5CA8E300246AD4 /* DashboardViewController.swift */,
 				B37D81C71C6842AE00F983C9 /* SocialLoginController.swift */,
+				B34C01091C71BC4200A92C8D /* SettingsViewController.swift */,
+				B34E64B71C725B33003165A8 /* GeneralNavigationController.swift */,
+				B359E2991C72842800B24687 /* GeneralTabBarController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -480,7 +489,9 @@
 				B373C4B91C3C9299002309DB /* Event.swift in Sources */,
 				B3871CBF1C44B87E00C3FCDB /* DemographicsViewController.swift in Sources */,
 				B369CF4A1C33D0C700CFB07D /* ManageTimesController.swift in Sources */,
+				B359E29A1C72842800B24687 /* GeneralTabBarController.swift in Sources */,
 				B37D81C81C6842AE00F983C9 /* SocialLoginController.swift in Sources */,
+				B34E64B81C725B33003165A8 /* GeneralNavigationController.swift in Sources */,
 				B35D664F1C5B526800529133 /* SafeTextField.swift in Sources */,
 				B382EEE91C5CA8E300246AD4 /* DashboardViewController.swift in Sources */,
 				B38942521C3D0D3800D433F7 /* Time.swift in Sources */,
@@ -497,6 +508,7 @@
 				B369CF511C33D39B00CFB07D /* Models.swift in Sources */,
 				B369CF181C33A6A100CFB07D /* AppDelegate.swift in Sources */,
 				B38942551C3D0D5A00D433F7 /* MeetDate+CoreDataProperties.swift in Sources */,
+				B34C010A1C71BC4200A92C8D /* SettingsViewController.swift in Sources */,
 				B382EEE71C5C857B00246AD4 /* USASwimmingViewController.swift in Sources */,
 				B373C4B81C3C9299002309DB /* Event+CoreDataProperties.swift in Sources */,
 				B369CF4E1C33D0F600CFB07D /* AddTimeController.swift in Sources */,

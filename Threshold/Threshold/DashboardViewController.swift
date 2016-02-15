@@ -24,6 +24,7 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = ThresholdColor.greenColor
+        themeUIViews([timeLengthSegment, graph])
         events = Models().getEvents().sort()
         chartSettings()
         dateFormat.dateFormat = "MM-dd-YYYY"
@@ -42,7 +43,6 @@ class DashboardViewController: UIViewController {
     }
     
     func chartSettings() {
-        graph.backgroundColor = UIColor.whiteColor()
         graph.descriptionText = ""
         graph.leftAxis.enabled = true
         graph.leftAxis.valueFormatter = TimesFormatter()
@@ -55,7 +55,10 @@ class DashboardViewController: UIViewController {
         graph.pinchZoomEnabled = false
         graph.scaleXEnabled = false
         graph.scaleYEnabled = false
-        graph.backgroundColor = UIColor.clearColor()
+        graph.gridBackgroundColor = ThresholdColor.blueColor
+        graph.leftAxis.gridColor = ThresholdColor.goldColor
+        graph.xAxis.gridColor = ThresholdColor.goldColor
+
     }
     
     func shareSetUp() {
@@ -66,11 +69,12 @@ class DashboardViewController: UIViewController {
         let documentsDirectory: NSString = paths[0]
         let localFilePath: NSString = documentsDirectory.stringByAppendingPathComponent("\(Int(event.distance))\(event.stroke)\(event.measurement)-\(timeLengthSegment.selectedSegmentIndex).png")
 
-        
+//        shareContent.contentURL = NSURL(string: "http://www.apple.com")
         shareContent.imageURL = NSURL(string: localFilePath as String)!
         shareContent.contentTitle = event.toString()
         shareContent.contentDescription = "Progress for this event over \(timeLengthSegment.titleForSegmentAtIndex(timeLengthSegment.selectedSegmentIndex))!"
         fbShareButton.shareContent = shareContent
+
     }
     
     func setUpChart(event: Event) {
@@ -109,7 +113,7 @@ class DashboardViewController: UIViewController {
         
         let today = Double(NSDate().timeIntervalSince1970)
         
-        var maxValue: Double?
+//        var maxValue: Double?
         
         for time in times {
             let timeDouble = Double(time.time)
