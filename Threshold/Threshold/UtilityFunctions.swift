@@ -11,6 +11,8 @@ import UIKit
 
 var tableCellColor: UIColor = UIColor(red: 211.0/255, green: 211.0/255, blue: 211.0/255, alpha: 1.0)
 var altTableCellColor: UIColor = UIColor(red: 230.0/255, green: 230.0/255, blue: 250.0/255.0, alpha: 1.0)
+var dataLineBlue = UIColor(red: 114.0/255, green: 147.0/255, blue: 203.0/255, alpha: 1.0)
+var dataPointBlue = UIColor(red: 57.0/255, green: 106.0/255, blue: 177.0/255, alpha: 1.0)
 
 
 func trimToNull(str: String?) -> String? {

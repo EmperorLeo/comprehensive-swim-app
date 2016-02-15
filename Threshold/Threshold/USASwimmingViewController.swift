@@ -34,6 +34,8 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
         eventsTableView.dataSource = self
         dateFormatter.dateFormat = "M/d/yyyy"
         
+        setUpProgressViews()
+        
         let request = NSURLRequest(URL: NSURL(string: "http://www.usaswimming.org/DesktopDefault.aspx?TabId=1470&Alias=Rainbow&Lang=en-US")!)
         webView.loadRequest(request)
         
@@ -80,33 +82,35 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
         
     }
     
-    func handleResults() {
-        
-        
-        let athleteName = webView.stringByEvaluatingJavaScriptFromString("document.getElementById('ctl63_lblAthleteName').innerHTML")
-        let athleteClub = webView.stringByEvaluatingJavaScriptFromString("document.getElementById('ctl63_lblAthleteClub').innerHTML")
-        self.navigationItem.title = athleteName! + " " + athleteClub!
-        
+    func setUpProgressViews() {
         progressFrame = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         self.view.addSubview(progressFrame!)
         progressFrame!.backgroundColor = UIColor.whiteColor()
         progressFrame!.becomeFirstResponder()
         progressFrame!.center = self.view.center
+        progressFrame!.layer.cornerRadius = 10
+        progressFrame!.layer.borderColor = UIColor.grayColor().CGColor
+        progressFrame!.layer.borderWidth = 1
+        progressFrame!.layer.shadowColor = UIColor.blackColor().CGColor
+        progressFrame!.layer.shadowOffset = CGSizeZero
+        progressFrame!.layer.shadowOpacity = 0.5
+        progressFrame!.layer.shadowRadius = 5
         
         let progressStack = UIStackView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+//        let progressStack = UIStackView()
         progressStack.axis = .Vertical
         progressStack.alignment = .Center
         progressStack.distribution = .FillEqually
         progressStack.spacing = 5
         progressFrame!.addSubview(progressStack)
-        let topConstraint = NSLayoutConstraint(item: progressStack, attribute: .Top, relatedBy: .Equal, toItem: progressFrame, attribute: .Top, multiplier: 1, constant: 0)
-        let leftConstraint = NSLayoutConstraint(item: progressStack, attribute: NSLayoutAttribute.Left, relatedBy: .Equal, toItem: progressFrame, attribute: .Left, multiplier: 1, constant: 0)
-        let rightConstraint = NSLayoutConstraint(item: progressStack, attribute: .Right, relatedBy: .Equal, toItem: progressFrame, attribute: .Right, multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: progressStack, attribute: .Bottom, relatedBy: .Equal, toItem: progressFrame, attribute: .Bottom, multiplier: 1, constant: 0)
-        progressFrame!.addConstraints([topConstraint, leftConstraint, rightConstraint, bottomConstraint])
         
         progressLabel = UILabel()
-        progressLabel!.text = "Processing..."
+        let labelConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[progressLabel(<=180)]", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: ["progressLabel": progressLabel!])
+        progressLabel?.addConstraints(labelConstraint)
+        progressLabel!.lineBreakMode = .ByWordWrapping
+        progressLabel!.numberOfLines = 0
+        progressLabel!.textAlignment = .Center
+        progressLabel!.text = "Waiting for USASwimming connection..."
         
         progress = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         progress!.color = UIColor.blackColor()
@@ -118,6 +122,18 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
         
         
         progress!.startAnimating()
+
+    }
+    
+    func handleResults() {
+        
+        
+        let athleteName = webView.stringByEvaluatingJavaScriptFromString("document.getElementById('ctl63_lblAthleteName').innerHTML")
+        let athleteClub = webView.stringByEvaluatingJavaScriptFromString("document.getElementById('ctl63_lblAthleteClub').innerHTML")
+        self.navigationItem.title = athleteName! + " " + athleteClub!
+        
+        
+        progressLabel?.text = "Parsing results..."
         
         let numPageScript = webView.stringByEvaluatingJavaScriptFromString("document.getElementsByClassName('GridPager')[0].getElementsByTagName('td')[0].getElementsByTagName('a').length")
         
@@ -131,73 +147,6 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
             self.progressFrame!.removeFromSuperview()
         }
         
-//        var javascriptToExecute: [String] = []
-//        if let pagesHtml = trimToNull(webView.stringByEvaluatingJavaScriptFromString("document.getElementsByClassName('GridPager')[0].innerHTML")) {
-//            
-//            let javascript = "javascript:"
-//            let indexes = pagesHtml.indexesOfString(javascript)
-//            
-//            for index in indexes {
-//                
-//                let newIndex = index + javascript.characters.count
-//                let funcString = pagesHtml.substringFromIndex(pagesHtml.startIndex.advancedBy(newIndex))
-//                let endIndex = funcString.characters.indexOf(")")
-//                let finalJavascriptString = funcString.substringToIndex(endIndex!.advancedBy(1))
-//                javascriptToExecute.append(finalJavascriptString)
-//                
-//            }
-//            
-//        }
-//        
-//        var delay = 1.0
-//        for num in 0...javascriptToExecute.count {
-//            
-//            let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), Int64(delay) * Int64(NSEC_PER_SEC))
-//            
-//            dispatch_after(time, dispatch_get_main_queue()) {
-//                self.getEventsInHtml()
-//                //                print("html print")
-//                
-//                if num != javascriptToExecute.count {
-//                    self.webView.stringByEvaluatingJavaScriptFromString(javascriptToExecute[num])
-//                    //                    print(String(num) + " " + javascriptToExecute[num])
-//                    
-//                }
-//                else {
-//                    self.eventBuffer.sortInPlace { (left, right) -> Bool in
-//                        
-//                        if left.1 == right.1 {
-//                            let spLeft = left.0.split(" ")
-//                            let spRight = right.0.split(" ")
-//                            if spLeft[1] == spRight[1] {
-//                                return spLeft[0] < spRight[0]
-//                            }
-//                            else {
-//                                return spLeft[1] < spRight[1]
-//                            }
-//                            
-//                            
-//                        }
-//                        else {
-//                            return left.1 < right.1
-//                        }
-//                        
-//                    }
-//                    self.eventsTableView.hidden = false
-//                    self.eventsTableView.reloadData()
-//                    self.loadTimesButton.hidden = false
-//                    self.progress!.stopAnimating()
-//                    self.progressFrame!.removeFromSuperview()
-//                    
-//                }
-//                
-//            }
-//            
-//            delay += 1.0
-//            
-//            
-//            
-//        }
 
         
     }
@@ -304,6 +253,16 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         
+        let lastName = defaults.objectForKey("lastName") as? String
+        let firstName = defaults.objectForKey("firstName") as? String
+        
+        if (trimToNull(lastName) == nil) || (trimToNull(firstName) == nil) {
+            displaySearchError("Please provide both a first and last name in the demographics section.")
+            progress?.stopAnimating()
+            progressFrame?.removeFromSuperview()
+            return
+        }
+        
         let javascript = "document.getElementById('ctl63_txtSearchLastName').value='\(defaults.objectForKey("lastName") as! String)';\n" + "document.getElementById('ctl63_txtSearchFirstName').value='\(defaults.objectForKey("firstName") as! String)';\n" + "document.getElementById('ctl63_radRange').checked=true;\n" + "document.getElementById('ctl00_ctl63_dtStartDate_radTheDate_dateInput').focus();\n" + "document.getElementById('ctl00_ctl63_dtStartDate_radTheDate_dateInput').value='1/1/2000';\n" + "document.getElementById('ctl00_ctl63_dtEndDate_radTheDate_dateInput').focus();\n" + "document.getElementById('ctl00_ctl63_dtEndDate_radTheDate_dateInput').value='\(dateFormatter.stringFromDate(NSDate()))';\n" + "document.getElementById('ctl00_ctl63_dtEndDate_radTheDate_dateInput').blur();\n" + ""
         
         
@@ -313,7 +272,7 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
         webView.stringByEvaluatingJavaScriptFromString(searchButtonScript!.split("javascript:")[1])
         
         
-
+        progressLabel?.text = "Loading swimmer data..."
         waitForResults()
         
     }
@@ -334,6 +293,8 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
             else {
                 
                 if results!.isEmpty {
+                    self.progress?.stopAnimating()
+                    self.progressFrame?.hidden = true
                     self.parsePersonSearchResults()
                 }
                 
@@ -416,7 +377,12 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
 //            print(clubName)
 //            print(javascript)
             
-            self.peopleBuffer.append(("\(firstName) \(middleInit) \(lastName)", clubName, javascript, dataGridPagerPage))
+            if middleInit.containsString("&nbsp;") {
+                self.peopleBuffer.append(("\(firstName) \(lastName)", clubName, javascript, dataGridPagerPage))
+            }
+            else {
+                self.peopleBuffer.append(("\(firstName) \(middleInit) \(lastName)", clubName, javascript, dataGridPagerPage))
+            }
             
             i++
         }
@@ -435,7 +401,12 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
 //            print(clubName)
 //            print(javascript)
             
-            self.peopleBuffer.append(("\(firstName) \(middleInit) \(lastName)", clubName, javascript, dataGridPagerPage))
+            if middleInit.containsString("&nbsp;") {
+                self.peopleBuffer.append(("\(firstName) \(lastName)", clubName, javascript, dataGridPagerPage))
+            }
+            else {
+                self.peopleBuffer.append(("\(firstName) \(middleInit) \(lastName)", clubName, javascript, dataGridPagerPage))
+            }
             
             i++
         }
@@ -550,6 +521,9 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
                     webView.stringByEvaluatingJavaScriptFromString(peopleBuffer[indexPath.row].2)
                     peopleTableView?.hidden = true
                 }
+                progressFrame?.hidden = false
+                progress?.startAnimating()
+                progressLabel?.text = "Waiting for results..."
                 waitForHandleResults()
             }
             else { //should mean that loadMore was clicked...

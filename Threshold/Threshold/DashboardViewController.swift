@@ -54,6 +54,7 @@ class DashboardViewController: UIViewController {
         graph.pinchZoomEnabled = false
         graph.scaleXEnabled = false
         graph.scaleYEnabled = false
+        graph.backgroundColor = UIColor.clearColor()
     }
     
     func shareSetUp() {
@@ -93,6 +94,10 @@ class DashboardViewController: UIViewController {
             numDays = 365
         } else if timeLengthSegment.selectedSegmentIndex == 3 {
             numDays = 730
+        } else if timeLengthSegment.selectedSegmentIndex == 4 {
+            if !times.isEmpty {
+                numDays = Int(abs(times[0].meetDate.date.timeIntervalSinceDate(NSDate()) / (60*60*24))) + 1
+            }
         }
         let numSeconds = Double(numDays * 24 * 60 * 60)
         
@@ -103,13 +108,22 @@ class DashboardViewController: UIViewController {
         
         let today = Double(NSDate().timeIntervalSince1970)
         
+        var maxValue: Double?
+        
         for time in times {
             let timeDouble = Double(time.time)
             let date = time.meetDate.date.timeIntervalSince1970
             let secondsBack = today - Double(date)
-//            if (secondsBack) > numSeconds {
+            if (secondsBack) > numSeconds {
+                
+                continue
+//                if maxValue == nil || maxValue < timeDouble {
+//                    maxValue = timeDouble
+//                }
+                
+                
 //                continue //too far back to be a data point
-//            }
+            }
             
             let xIndex: Int = numDays - 1 - (Int(secondsBack) / (24*60*60))
             timeValues.append(ChartDataEntry(value: timeDouble, xIndex: xIndex))
@@ -123,13 +137,18 @@ class DashboardViewController: UIViewController {
             dateValues.append(dateFormat.stringFromDate(day))
         }
         
-        
+//        if times.count > 1 {
+//            graph.leftAxis.axisMaximum = maxValue!
+//        }
         
         let dataSet = LineChartDataSet(yVals: timeValues, label: "Times")
-        dataSet.colors = [UIColor.greenColor()]
-        dataSet.setCircleColor(UIColor.greenColor())
+        dataSet.colors = [dataLineBlue]
+        dataSet.setCircleColor(dataPointBlue)
         dataSet.fillColor = UIColor.greenColor()
-//        dataSet.fillAlpha = 1.0
+        dataSet.circleRadius = 4
+        dataSet.drawValuesEnabled = false
+        dataSet.lineWidth = 3
+        //        dataSet.fillAlpha = 1.0
 //        dataSet.drawCirclesEnabled = true
 //        dataSet.drawValuesEnabled = true
         let data = LineChartData(xVals: dateValues, dataSet: dataSet)
