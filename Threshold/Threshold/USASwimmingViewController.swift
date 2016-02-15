@@ -27,6 +27,19 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = ThresholdColor.greenColor
+        self.loadTimesButton.backgroundColor = ThresholdColor.blueColor
+        self.loadTimesButton.layer.borderColor = ThresholdColor.bredColor.CGColor
+        self.loadTimesButton.layer.borderWidth = 1
+        self.loadTimesButton.layer.cornerRadius = 5.0
+        self.loadTimesButton.layer.shadowColor = ThresholdColor.goldColor.CGColor
+        self.loadTimesButton.layer.shadowOffset = CGSizeZero
+        self.loadTimesButton.layer.shadowRadius = 5.0
+        self.loadTimesButton.titleLabel?.shadowOffset = CGSizeZero
+        self.loadTimesButton.titleLabel?.shadowColor = ThresholdColor.goldColor
+        self.loadTimesButton.setTitleColor(ThresholdColor.bredColor, forState: .Highlighted)
+        
         webView.delegate = self
         peopleTableView.delegate = self
         peopleTableView.dataSource = self
@@ -85,7 +98,7 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
     func setUpProgressViews() {
         progressFrame = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         self.view.addSubview(progressFrame!)
-        progressFrame!.backgroundColor = UIColor.whiteColor()
+        progressFrame!.backgroundColor = ThresholdColor.blueColor
         progressFrame!.becomeFirstResponder()
         progressFrame!.center = self.view.center
         progressFrame!.layer.cornerRadius = 10

@@ -28,6 +28,8 @@ class AddTimeController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        colorInit()
         
         navigationItem.title = event!.toString()
         
@@ -71,6 +73,15 @@ class AddTimeController: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
 
+    }
+    
+    func colorInit() {
+        
+        self.view.backgroundColor = ThresholdColor.greenColor
+        
+        themeUIViews([timeField, finalsTime, dateField, meetField, clubField, notesTextView, prelimsFinalsChooser])
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

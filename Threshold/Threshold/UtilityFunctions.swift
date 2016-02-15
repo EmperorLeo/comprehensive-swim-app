@@ -9,6 +9,50 @@
 import Foundation
 import UIKit
 
+class ThresholdColor {
+    
+    static var blueColor: UIColor {
+        get {
+            
+            return UIColor(red: 148.0/255, green: 185.0/255, blue: 175.0/255, alpha: 1.0)
+            
+        }
+    }
+    
+    static var greenColor: UIColor {
+        
+        get {
+            return UIColor(red: 144.0/255, green: 165.0/255, blue: 131.0/255, alpha: 1.0)
+        }
+        
+    }
+    static var goldColor: UIColor {
+        
+        get {
+            return UIColor(red: 157.0/255, green: 132.0/255, blue: 32.0/255, alpha: 1.0)
+        }
+        
+    }
+    
+    static var redColor: UIColor {
+        
+        get {
+            return UIColor(red: 148.0/255, green: 41.0/255, blue: 17.0/255, alpha: 1.0)
+        }
+        
+    }
+    
+    static var bredColor: UIColor {
+        
+        get {
+            return UIColor(red: 89.0/255, green: 56.0/255, blue: 55.0/255, alpha: 1.0)
+        }
+        
+    }
+    
+}
+
+
 var tableCellColor: UIColor = UIColor(red: 211.0/255, green: 211.0/255, blue: 211.0/255, alpha: 1.0)
 var altTableCellColor: UIColor = UIColor(red: 230.0/255, green: 230.0/255, blue: 250.0/255.0, alpha: 1.0)
 var dataLineBlue = UIColor(red: 114.0/255, green: 147.0/255, blue: 203.0/255, alpha: 1.0)
@@ -68,6 +112,18 @@ func getImageForStroke(stroke: String) -> UIImage? {
     }
     
     return image
+}
+
+func themeUIViews(fields: [UIView]) {
+    
+    for view in fields {
+        
+        view.backgroundColor = ThresholdColor.blueColor
+        view.layer.borderColor = ThresholdColor.goldColor.CGColor
+        view.layer.borderWidth = 1
+        
+    }
+    
 }
 
 extension String {

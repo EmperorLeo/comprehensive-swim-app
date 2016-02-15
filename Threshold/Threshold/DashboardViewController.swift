@@ -23,6 +23,7 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = ThresholdColor.greenColor
         events = Models().getEvents().sort()
         chartSettings()
         dateFormat.dateFormat = "MM-dd-YYYY"

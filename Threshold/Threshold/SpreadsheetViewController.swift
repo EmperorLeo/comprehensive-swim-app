@@ -45,7 +45,7 @@ class SpreadsheetViewController: UIViewController, MMSpreadsheetViewDelegate, MM
         spreadsheet!.registerCellClass(EventCell.self, forCellWithReuseIdentifier: "EventCell")
         spreadsheet!.registerCellClass(DateCell.self, forCellWithReuseIdentifier: "DateCell")
         spreadsheet!.registerCellClass(TimesCell.self, forCellWithReuseIdentifier: "TimesCell")
-        spreadsheet!.backgroundColor = UIColor.blackColor()
+        spreadsheet!.backgroundColor = ThresholdColor.bredColor
         
         
         

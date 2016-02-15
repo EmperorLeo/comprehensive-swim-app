@@ -38,7 +38,7 @@ class SocialLoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = ThresholdColor.greenColor
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
         // Do any additional setup after loading the view.

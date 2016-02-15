@@ -17,6 +17,7 @@ class GoalViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = ThresholdColor.greenColor
         events = Models().getEvents().sort()
         
 //        tableView!.registerClass(GoalsCell.self, forCellReuseIdentifier: "goalCell")
