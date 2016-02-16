@@ -108,7 +108,7 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
         self.view.addSubview(progressFrame!)
         progressFrame!.backgroundColor = ThresholdColor.blueColor
         progressFrame!.becomeFirstResponder()
-        progressFrame!.center = self.view.center
+        progressFrame!.center = CGPointMake(self.view.center.x, self.view.center.y - (self.navigationController?.navigationBar.frame.height)!)
         progressFrame!.layer.cornerRadius = 10
         progressFrame!.layer.borderColor = UIColor.grayColor().CGColor
         progressFrame!.layer.borderWidth = 1
@@ -126,7 +126,7 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
         progressFrame!.addSubview(progressStack)
         
         progressLabel = UILabel()
-        let labelConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[progressLabel(<=180)]", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: ["progressLabel": progressLabel!])
+        let labelConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[progressLabel(<=180)]", options: NSLayoutFormatOptions.AlignAllCenterY, metrics: nil, views: ["progressLabel": progressLabel!])
         progressLabel?.addConstraints(labelConstraint)
         progressLabel!.lineBreakMode = .ByWordWrapping
         progressLabel!.numberOfLines = 0
