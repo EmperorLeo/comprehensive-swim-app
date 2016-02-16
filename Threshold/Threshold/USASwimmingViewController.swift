@@ -483,6 +483,8 @@ class USASwimmingViewController: UIViewController, UIWebViewDelegate, UITableVie
             let possibleError = self.webView.stringByEvaluatingJavaScriptFromString("document.getElementsByClassName('NormalError')[1].innerHTML")!
             
             if possibleError == "The person you selected has no USA-S ID" {
+                self.progress?.stopAnimating()
+                self.progressFrame?.removeFromSuperview()
                 self.displaySearchError("The person you selected has no USA-S ID")
             }
             
