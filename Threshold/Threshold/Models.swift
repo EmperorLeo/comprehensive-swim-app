@@ -326,6 +326,28 @@ class Models {
         managedContext.deleteObject(object)
     }
     
+    func hardReset() {
+        
+        let deleteBatch = [NSEntityDescription.entityForName("Time", inManagedObjectContext: managedContext),NSEntityDescription.entityForName("Event", inManagedObjectContext: managedContext),NSEntityDescription.entityForName("MeetDate", inManagedObjectContext: managedContext)]
+        for entDesc in deleteBatch {
+            deleteAllObjects(entDesc!)
+        }
+        
+
+    }
+    
+    private func deleteAllObjects(ent: NSEntityDescription) {
+        let fetchRequest = NSFetchRequest()
+        fetchRequest.entity = ent
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try managedContext.executeRequest(deleteRequest)
+        } catch {
+            print("failed to delete")
+        }
+
+    }
+    
     //helpers
     func getBestOfTwo(one: Double, two: Double?) -> Double {
         if(two == nil) {

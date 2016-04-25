@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
+    @IBOutlet weak var resetTimes: UITableViewCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = ThresholdColor.greenColor
@@ -17,7 +19,10 @@ class SettingsViewController: UITableViewController {
         for row in 0...self.tableView.numberOfRowsInSection(0) - 1 {
             themeUIViews([self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: 0))!])
         }
-        // Do any additional setup after loading the view.
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: "resetAllTimes:")
+        resetTimes.addGestureRecognizer(tapGesture)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +30,8 @@ class SettingsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    
     /*
     // MARK: - Navigation
 
@@ -35,5 +41,16 @@ class SettingsViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func resetAllTimes(sender: AnyObject?) {
+        let alert = UIAlertController(title: "WARNING", message: "All saved times will be deleted and unrecoverable.", preferredStyle: .Alert)
+        let ok = UIAlertAction(title: "OK", style: .Destructive) { void in
+            Models().hardReset()
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 
 }
