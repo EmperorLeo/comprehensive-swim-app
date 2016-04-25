@@ -28,3 +28,6 @@ App designed by Leo Feldman with the purpose of monitoring and sharing progress 
 
 ####Goaltimes, visually incomplete
 ![Goal Times](https://github.com/EmperorLeo/comprehensive-swim-app/blob/master/images/goaltimes.png)
+
+####My graph for butterfly
+![Graph](https://github.com/EmperorLeo/comprehensive-swim-app/blob/master/images/mygraph.png)
